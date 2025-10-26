@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+// Layout
 import Layout from './Components/Layouts/Layout';
 
 // Pages

@@ -4,9 +4,9 @@ import { Mail, Phone, MessageCircle, Instagram, Facebook } from 'lucide-react';
 
 const Footer: React.FC = () => {
     const socialLinks = {
-        instagram: 'https://instagram.com/yourpage',
-        facebook: 'https://facebook.com/yourpage',
-        whatsapp: 'https://wa.me/22890123456'
+        instagram: 'https://www.instagram.com/anaisconcept/',
+        facebook: 'https://www.facebook.com/anaisconceptbiz/',
+        whatsapp: 'https://wa.me/22890123148'
       };
   return (
     <footer className="py-12 px-4 border-t border-gray-200 bg-gray-50">
@@ -48,11 +48,11 @@ const Footer: React.FC = () => {
             <div className="space-y-2 text-sm text-gray-600">
               <div className="flex items-center gap-2">
                 <Mail size={16} />
-                <span>info@foireauxcadeaux.tg</span>
+                <span>infos@anaisconcept.biz</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone size={16} />
-                <span>+228 90 12 34 56</span>
+                <span>+228 90 12 31 48</span>
               </div>
               <div className="flex items-center gap-2">
                 <MessageCircle size={16} />
@@ -73,7 +73,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-gray-300 mt-8 pt-8 text-center text-sm text-gray-500">
-          <p>&copy; 2025 La Foire Aux Cadeaux. Tous droits réservés. • Organisé par Events Togo</p>
+          <p>&copy; 2025 La Foire Aux Cadeaux. Tous droits réservés. • Organisé par ANAÏS Concept</p>
         </div>
       </div>
     </footer>
