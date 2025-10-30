@@ -3,6 +3,8 @@ import { Calendar, MapPin, Clock, Users, Gift, Heart, ShoppingBag, Mic, Star, Ch
 import type { Testimonial, NewsletterForm } from '../types';
 import useSEO from '../Hooks/useSEO';
 
+
+
 const Home: React.FC = () => {
    useSEO({
     title: "La Foire Aux Cadeaux 2025 - L'expérience shopping incontournable à Lomé",
@@ -206,41 +208,65 @@ const Home: React.FC = () => {
       </section>
 
       {/* Why Visit */}
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-              Pourquoi visiter la foire ?
-            </h2>
-          </div>
+<section className="py-16 px-4 bg-gray-50">
+  <div className="max-w-6xl mx-auto">
+    <div className="text-center mb-16">
+      <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+        Pourquoi visiter la foire ?
+      </h2>
+    </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow">
-              <div className="text-4xl mb-4">🎁</div>
-              <h3 className="text-xl font-semibold mb-3 text-gray-900">Marques locales</h3>
-              <p className="text-gray-600">Découvrez le savoir-faire togolais et soutenez les créateurs locaux</p>
-            </div>
-
-            <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow">
-              <div className="text-4xl mb-4">👨‍👩‍👧‍👦</div>
-              <h3 className="text-xl font-semibold mb-3 text-gray-900">Sortie familiale</h3>
-              <p className="text-gray-600">Des activités pour petits et grands dans une ambiance festive</p>
-            </div>
-
-            <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow">
-              <div className="text-4xl mb-4">🛍️</div>
-              <h3 className="text-xl font-semibold mb-3 text-gray-900">Cadeaux exclusifs</h3>
-              <p className="text-gray-600">Trouvez des idées cadeaux originales qu'on ne trouve nulle part ailleurs</p>
-            </div>
-
-            <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow">
-              <div className="text-4xl mb-4">🎤</div>
-              <h3 className="text-xl font-semibold mb-3 text-gray-900">Expériences live</h3>
-              <p className="text-gray-600">Assistez à des démonstrations, ateliers et spectacles</p>
-            </div>
-          </div>
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105">
+        <div className="aspect-square mb-4 rounded-xl overflow-hidden">
+          <img 
+            src={galleryImages[0]} 
+            alt="Marques locales et artisans togolais"
+            className="w-full h-full object-cover"
+          />
         </div>
-      </section>
+        <h3 className="text-xl font-semibold mb-3 text-gray-900">Marques locales</h3>
+        <p className="text-gray-600 text-sm">Découvrez le savoir-faire togolais et soutenez les créateurs locaux</p>
+      </div>
+
+      <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105">
+        <div className="aspect-square mb-4 rounded-xl overflow-hidden">
+          <img 
+            src={galleryImages[4]} 
+            alt="Sortie familiale et activités enfants"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <h3 className="text-xl font-semibold mb-3 text-gray-900">Sortie familiale</h3>
+        <p className="text-gray-600 text-sm">Des activités pour petits et grands dans une ambiance festive</p>
+      </div>
+
+      <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105">
+        <div className="aspect-square mb-4 rounded-xl overflow-hidden">
+          <img 
+            src={galleryImages[5]} 
+            alt="Cadeaux exclusifs et produits uniques"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <h3 className="text-xl font-semibold mb-3 text-gray-900">Cadeaux exclusifs</h3>
+        <p className="text-gray-600 text-sm">Trouvez des idées cadeaux originales qu'on ne trouve nulle part ailleurs</p>
+      </div>
+
+      <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105">
+        <div className="aspect-square mb-4 rounded-xl overflow-hidden">
+          <img 
+            src={galleryImages[3]} 
+            alt="Expériences live et spectacles"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <h3 className="text-xl font-semibold mb-3 text-gray-900">Expériences live</h3>
+        <p className="text-gray-600 text-sm">Assistez à des démonstrations, ateliers et spectacles</p>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Become an Exhibitor */}
       <section id="exhibitor" className="py-16 px-4">
@@ -422,6 +448,9 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Partners Section */}
+
 
       {/* Practical Info */}
       <section id="info" className="py-16 px-4">
