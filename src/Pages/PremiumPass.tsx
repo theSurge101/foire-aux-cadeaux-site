@@ -30,8 +30,8 @@ const PremiumPass: React.FC = () => {
   useSEO({
     title: "Pass Premium VIP - La Foire Aux Cadeaux 2025 | Expérience Exclusive",
     description: "Profitez d'une expérience VIP unique : accès prioritaire, salon privé, cocktail exclusif, cadeaux premium et bien plus. Places limitées.",
-    url: "https://foireauxcadeaux.tg/pass-premium",
-    image: "https://foireauxcadeaux.tg/og-premium.jpg",
+    url: "https://foireauxcadeaux.anaisconcept.biz/pass-premium",
+    image: "https://foireauxcadeaux.anaisconcept.biz/og-premium.jpg",
     keywords: "pass vip lomé, accès premium foire, expérience exclusive togo, salon vip lomé"
   });
 
@@ -81,7 +81,7 @@ const PremiumPass: React.FC = () => {
     {
       icon: Sparkles,
       title: 'Réductions Exposants',
-      description: 'Carte de réduction 10-20% chez +50 exposants participants pendant les 3 jours.',
+      description: 'Carte cadeau de 10.000 FCFA valable chez +50 exposants participants pendant les 3 jours.',
       value: 'Économies'
     },
     {
@@ -102,7 +102,7 @@ const PremiumPass: React.FC = () => {
     { feature: 'Meet & Greet créateurs privé', standard: false, premium: true },
     { feature: 'Shooting photo professionnel', standard: false, premium: true },
     { feature: 'Parking réservé', standard: 'Parking public', premium: 'Place réservée' },
-    { feature: 'Réductions exposants', standard: false, premium: '10-20% chez +50 stands' },
+    { feature: 'Carte cadeau exposants', standard: false, premium: '10.000 FCFA chez +50 stands' },
     { feature: 'Service conciergerie', standard: false, premium: 'Équipe dédiée' },
     { feature: 'Accès zones enfants', standard: true, premium: true },
     { feature: 'File d\'attente ateliers', standard: 'Standard', premium: 'Prioritaire' },
@@ -136,27 +136,27 @@ const PremiumPass: React.FC = () => {
   const faqs = [
     {
       question: 'Combien coûte le Pass Premium ?',
-      answer: 'Le Pass Premium est à 25,000 FCFA pour les 3 jours (Early Bird : 20,000 FCFA jusqu\'au 31 janvier). Il donne accès à tous les avantages VIP listés ci-dessus. Places limitées à 200 passes.'
+      answer: 'Le Pass Premium est à 25,000 FCFA pour les 3 jours (Early Bird : 20,000 FCFA jusqu\'au 30 novembre). Il donne accès à tous les avantages VIP listés ci-dessus. Places limitées à 200 passes.'
     },
     {
       question: 'Le Pass Premium est-il valable pour les 3 jours ?',
-      answer: 'Oui ! Votre Pass Premium vous donne accès à tous les avantages pendant les 3 jours de la foire (15, 16 et 17 mars 2025). Vous pouvez entrer et sortir librement avec votre badge VIP.'
+      answer: 'Oui ! Votre Pass Premium vous donne accès à tous les avantages pendant les 3 jours de la foire (19, 20 et 21 décembre 2025). Vous pouvez entrer et sortir librement avec votre Pass Premium.'
     },
     {
       question: 'Puis-je acheter plusieurs Pass Premium ?',
-      answer: 'Absolument ! Si vous venez en famille ou entre amis, vous pouvez acheter autant de passes que nécessaire. Chaque personne aura son propre badge et ses propres avantages.'
+      answer: 'Absolument ! Si vous venez en famille ou entre amis, vous pouvez acheter autant de passes que nécessaire. Chaque personne aura son propre pass et ses propres avantages.'
     },
     {
       question: 'Comment recevoir mon Pass Premium ?',
-      answer: 'Après paiement, vous recevrez par email un QR code + badge nominatif à imprimer. À l\'entrée, scannez votre QR code et récupérez votre bracelet VIP et votre goodie bag.'
+      answer: 'Après paiement, vous recevrez par livreur une carte. À l\'entrée, présentez votre pass et récupérez votre goodie bag.'
     },
     {
       question: 'Les enfants ont-ils besoin d\'un Pass Premium ?',
-      answer: 'Les enfants de moins de 12 ans accompagnés d\'un adulte avec Pass Premium bénéficient des avantages gratuitement (sauf shooting photo et cocktail vendredi). Goodie bag enfant offert !'
+      answer: 'Les enfants de moins de 12 ans accompagnés d\'un adulte avec Pass Premium bénéficient des avantages gratuitement (sauf shooting photo et cocktail vendredi).'
     },
     {
       question: 'Puis-je me faire rembourser ?',
-      answer: 'Remboursement intégral jusqu\'au 28 février 2025. Après cette date, le Pass est non remboursable mais transférable à une autre personne (nous contacter).'
+      answer: 'Remboursement intégral jusqu\'au 28 Novembre 2025. Après cette date, le Pass est non remboursable mais transférable à une autre personne (nous contacter).'
     },
     {
       question: 'Y a-t-il vraiment que 200 passes disponibles ?',
@@ -196,9 +196,9 @@ const PremiumPass: React.FC = () => {
               <div className="text-sm text-gray-300">Prix normal</div>
             </div>
             <div className="bg-yellow-500 text-gray-900 px-6 py-4 rounded-xl border-2 border-yellow-400">
-              <div className="text-sm font-semibold mb-1">🔥 EARLY BIRD</div>
+              <div className="text-sm font-semibold mb-1">EARLY BIRD</div>
               <div className="text-4xl font-bold mb-1">20,000 FCFA</div>
-              <div className="text-sm">Jusqu'au 31 janvier</div>
+              <div className="text-sm">Jusqu'au 30 novembre</div>
             </div>
           </div>
 
@@ -278,7 +278,7 @@ const PremiumPass: React.FC = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="text-green-600 flex-shrink-0 mt-1" size={18} />
-                    <span className="text-gray-700">Réductions exposants (10,000+ FCFA)</span>
+                    <span className="text-gray-700">Carte cadeau exposants (10,000+ FCFA)</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="text-green-600 flex-shrink-0 mt-1" size={18} />
@@ -426,17 +426,19 @@ const PremiumPass: React.FC = () => {
             Rejoignez les 200 privilégiés qui vivront la foire autrement
           </p>
 
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 mb-8 inline-block">
-            <div className="text-sm text-gray-300 mb-2">Offre Early Bird expire dans</div>
-            <div className="text-4xl font-bold text-yellow-400">23 jours</div>
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 mb-8">
+            <div className="text-sm text-gray-300 mb-2">Offre Early Bird expire le</div>
+            <div className="text-4xl font-bold text-yellow-400">30 Novembre</div>
+            <div className="text-4xl font-bold text-yellow-400">
+              <button
+              onClick={() => setShowPaymentModal(true)}
+              className="bg-yellow-500 hover:bg-yellow-400 text-gray-900 px-12 py-5 rounded-lg text-xl font-bold transition-all transform hover:scale-105"
+              >
+              Acheter maintenant à 20,000 FCFA
+              </button>
+            </div>
           </div>
 
-          <button
-            onClick={() => setShowPaymentModal(true)}
-            className="bg-yellow-500 hover:bg-yellow-400 text-gray-900 px-12 py-5 rounded-lg text-xl font-bold transition-all transform hover:scale-105"
-          >
-            Acheter maintenant à 20,000 FCFA
-          </button>
 
           <p className="text-sm text-gray-400 mt-6">
             Paiement sécurisé • Mobile Money & Carte bancaire acceptés

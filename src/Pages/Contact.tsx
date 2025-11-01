@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Clock, MessageCircle, Send, CheckCircle, Instagram, Facebook, Twitter, User, FileText, AlertCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, MessageCircle, Send, CheckCircle, Instagram, Facebook, Linkedin, User, FileText, AlertCircle } from 'lucide-react';
 import useSEO from '../Hooks/useSEO';
+import { Link } from 'react-router-dom';
 
 interface ContactMethod {
   icon: React.ComponentType<{ size?: number; className?: string }>;
@@ -45,8 +46,8 @@ const Contact: React.FC = () => {
   useSEO({
     title: "Nous Contacter - La Foire Aux Cadeaux 2025 | Lomé",
     description: "Une question sur la foire ? Contactez-nous par email, téléphone, WhatsApp ou via notre formulaire. Notre équipe répond sous 24h.",
-    url: "https://foireauxcadeaux.tg/contact",
-    image: "https://foireauxcadeaux.tg/og-contact.jpg",
+    url: "https://foireauxcadeaux.anaisconcept.biz/contact",
+    image: "https://oireauxcadeaux.anaisconcept.biz/og-contact.jpg",
     keywords: "contact foire lomé, téléphone événement togo, email foire cadeaux, whatsapp foire"
   });
 
@@ -54,31 +55,31 @@ const Contact: React.FC = () => {
     {
       icon: MessageCircle,
       title: 'WhatsApp',
-      value: '+228 90 12 34 56',
-      link: 'https://wa.me/22890123456',
-      description: 'Réponse immédiate 7j/7',
+      value: '+228 90 12 31 48',
+      link: 'https://wa.me/22890123148',
+      description: 'Réponse rapide 7j/7',
       available: '8h-20h tous les jours'
     },
     {
       icon: Phone,
       title: 'Téléphone',
-      value: '+228 90 12 34 56',
-      link: 'tel:+22890123456',
+      value: '+228 90 12 31 48',
+      link: 'tel:+22890123148',
       description: 'Appelez-nous directement',
       available: 'Lun-Sam: 9h-18h'
     },
     {
       icon: Mail,
       title: 'Email',
-      value: 'info@foireauxcadeaux.tg',
-      link: 'mailto:info@foireauxcadeaux.tg',
+      value: 'infos@anaisconcept.biz',
+      link: 'mailto:infos@anaisconcept.biz',
       description: 'Réponse sous 24h',
       available: 'Toujours disponible'
     },
     {
       icon: MapPin,
       title: 'Bureaux',
-      value: 'Quartier Nyékonakpoè, Lomé',
+      value: '58, Avenue Kléber Dadjo, Quartier des Étoiles Wétrivi Kondji, Lomé',
       link: '#map',
       description: 'Visitez nos bureaux',
       available: 'Lun-Ven: 9h-17h'
@@ -100,21 +101,21 @@ const Contact: React.FC = () => {
       icon: Instagram,
       name: 'Instagram',
       handle: '@foireauxcadeaux',
-      link: 'https://instagram.com/foireauxcadeaux',
+      link: 'https://www.instagram.com/anaisconcept/',
       color: 'hover:bg-pink-500'
     },
     {
       icon: Facebook,
       name: 'Facebook',
-      handle: 'La Foire Aux Cadeaux',
+      handle: 'La Foire Aux Cadeaux - FAC ',
       link: 'https://facebook.com/foireauxcadeaux',
       color: 'hover:bg-blue-600'
     },
     {
-      icon: Twitter,
-      name: 'Twitter/X',
-      handle: '@foirecadeaux',
-      link: 'https://twitter.com/foirecadeaux',
+      icon: Linkedin,
+      name: 'LinkedIn',
+      handle: '@Foire Aux Cadeaux de Lomé',
+      link: 'https://www.linkedin.com/showcase/foire-aux-cadeaux-de-lom%C3%A9/',
       color: 'hover:bg-gray-800'
     }
   ];
@@ -217,7 +218,7 @@ const Contact: React.FC = () => {
             Contactez-nous
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed">
-            Une question ? Un besoin d'information ? Notre équipe est là pour vous aider. 
+            Une question ? <br />Un besoin d'information ? <br />Notre équipe est là pour vous aider. <br />
             Nous répondons sous 24h maximum.
           </p>
         </div>
@@ -358,7 +359,7 @@ const Contact: React.FC = () => {
                             ? 'border-red-500 focus:border-red-500' 
                             : 'border-gray-300 focus:border-gray-900'
                         }`}
-                        placeholder="+228 90 12 34 56"
+                        placeholder="+228 90 12 31 48"
                       />
                     </div>
                     {errors.phone && (
@@ -491,7 +492,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div className="flex justify-between items-center pb-3 border-b border-gray-200">
                     <span className="font-medium text-gray-900">Samedi</span>
-                    <span className="text-gray-600">9h00 - 14h00</span>
+                    <span className="text-gray-600">9h00 - 12h00</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="font-medium text-gray-900">Dimanche</span>
@@ -569,29 +570,32 @@ const Contact: React.FC = () => {
 
           <div className="bg-gray-100 rounded-2xl overflow-hidden">
             <div className="aspect-video bg-gray-200 flex items-center justify-center">
-              <div className="text-center text-gray-500">
-                <MapPin size={48} className="mx-auto mb-2" />
-                <p className="font-semibold">Carte Google Maps interactive</p>
-                <p className="text-sm">Quartier Nyékonakpoè, Lomé, Togo</p>
-              </div>
+              <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.9730824993194!2d1.2194143!3d6.134318999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1023e1e6608d109d%3A0xd2277af0306a339!2sANA%C3%8FS%20Concept!5e0!3m2!1sfr!2stg!4v1761915158157!5m2!1sfr!2stg"
+                  width="100%" height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
             </div>
             <div className="p-6 bg-white">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <h4 className="font-semibold mb-2 text-gray-900">Adresse complète</h4>
                   <p className="text-gray-600">
-                    Events Togo - La Foire Aux Cadeaux<br />
-                    Quartier Nyékonakpoè<br />
-                    Avenue de la Libération<br />
+                    ANAÏS Concept - La Foire Aux Cadeaux<br />
+                    558, Avenue Kléber Dadjo,<br />
+                    Quartier des Étoiles, Wétrivi Kondji<br />
                     Lomé, Togo
                   </p>
                 </div>
                 <div>
                   <h4 className="font-semibold mb-2 text-gray-900">Comment venir</h4>
                   <p className="text-gray-600 text-sm">
-                    <strong>En taxi :</strong> Dites "Nyékonakpoè, près du CEG"<br />
-                    <strong>En bus :</strong> Lignes 7, 12 (arrêt Nyékonakpoè)<br />
-                    <strong>Parking :</strong> Disponible sur place
+                    <strong>En taxi :</strong> Dites "Quartier des étoiles, face à l'entreprise MATS transports"<br />
+                    <strong>En personnel :</strong> Localisation GPS (Carte interactive plus haut)<br />
+                    <strong>Parking :</strong> Disponible, peu de places
                   </p>
                 </div>
               </div>

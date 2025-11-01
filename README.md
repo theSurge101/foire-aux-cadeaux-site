@@ -1,69 +1,60 @@
-# React + TypeScript + Vite
+# La Foire Aux Cadeaux — Frontend (React + TypeScript + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Minimal Vite + React + TypeScript frontend for the "La Foire Aux Cadeaux" website.
 
-Currently, two official plugins are available:
+Quick links
+- [package.json](package.json)
+- [vite.config.ts](vite.config.ts)
+- [tailwind.config.js](tailwind.config.js)
+- [src/App.tsx](src/App.tsx)
+- [`Layout`](src/Components/Layouts/Layout.tsx)
+- [`Header`](src/Components/Layouts/Header.tsx)
+- [`Footer`](src/Components/Layouts/Footer.tsx)
+- [src/Pages](src/Pages)
+- [`useSEO`](src/Hooks/useSEO.ts)
+- [src/types/index.ts](src/types/index.ts)
+- [`PartnersSection`](src/Components/Sections/PartnersSection.tsx)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Quick start
+1. Requirements: Node >= 16 (see [package.json](package.json) engines).
+2. Install:
+   npm install
+3. Dev (HMR):
+   npm run dev
+4. Build:
+   npm run build
+5. Preview production build:
+   npm run preview
+6. Lint:
+   npm run lint
+7. Type-check:
+   tsc -b (also run via npm run build)
 
-## Expanding the ESLint configuration
+Project structure (high level)
+- src/
+  - App.tsx — route wiring and top-level app ([src/App.tsx](src/App.tsx))
+  - Pages/ — pages displayed by router (create pages here)
+  - Components/
+    - Layouts/ — shared layout components (`Layout`, `Header`, `Footer`)
+    - Common/ — small reusable UI bits
+    - Sections/ — larger page sections (e.g. [`PartnersSection`](src/Components/Sections/PartnersSection.tsx))
+  - Hooks/ — custom hooks (e.g. [`useSEO`](src/Hooks/useSEO.ts))
+  - types/ — global TypeScript types ([src/types/index.ts](src/types/index.ts))
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Conventions & patterns
+- File/component naming: PascalCase for React components and files in `src/Components` and `src/Pages`.
+- Components: functional components typed as `React.FC`.
+- Routing: Add new pages under [src/Pages](src/Pages) and register them in [src/App.tsx](src/App.tsx) inside the `<Route path="/" element={<Layout/>}>` block.
+- Styling: Tailwind CSS utilities. Global CSS entry: [src/index.css](src/index.css).
+- Assets: put static images and files in `public/` and reference them with root paths (e.g. `/images/...`).
+- Carousel: project uses `swiper` (see [`PartnersSection`](src/Components/Sections/PartnersSection.tsx)).
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Adding a page (example)
+1. Create `src/Pages/MyPage.tsx` exporting a `React.FC`.
+2. Register route in [src/App.tsx](src/App.tsx): add `<Route path="mypage" element={<MyPage/>} />` inside the `Layout` route block.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+Notes
+- Public copy (pages & `public/`) should not be changed without review.
+- Build scripts, TypeScript config and path aliases are project-level constraints — ask before changing them.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+For quick reference to SEO helpers and types, see [`useSEO`](src/Hooks/useSEO.ts) and [src/types/index.ts](src/types/index.ts).
