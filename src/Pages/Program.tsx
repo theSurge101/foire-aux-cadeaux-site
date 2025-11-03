@@ -24,10 +24,10 @@ const Program: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
   useSEO({
-    title: "Programme Complet - La Foire Aux Cadeaux 2025 | 15-17 Mars",
+    title: "Programme Complet - La Foire Aux Cadeaux 2025 | 19-21 Décembre",
     description: "Découvrez le programme détaillé des 3 jours : défilés de mode, concerts, ateliers DIY, démonstrations culinaires, animations enfants et bien plus encore !",
-    url: "https://foireauxcadeaux.tg/programme",
-    image: "https://foireauxcadeaux.tg/og-program.jpg",
+    url: "https://foireauxcadeaux.anaisconcept.biz/programme",
+    image: "https://foireauxcadeaux.anaisconcept.biz/og-program.jpg",
     keywords: "programme foire cadeaux, animations lomé, ateliers togo, spectacles événement, défilés mode lomé"
   });
 
@@ -44,9 +44,9 @@ const Program: React.FC = () => {
 
   const schedule: DaySchedule[] = [
     {
-      date: '15 Mars',
+      date: '19 Décembre',
       day: 'Vendredi',
-      fullDate: 'Vendredi 15 Mars 2025',
+      fullDate: 'Vendredi 19 Décembre 2025',
       activities: [
         {
           time: '09:30',
@@ -135,9 +135,9 @@ const Program: React.FC = () => {
       ]
     },
     {
-      date: '16 Mars',
+      date: '20 Décembre',
       day: 'Samedi',
-      fullDate: 'Samedi 16 Mars 2025',
+      fullDate: 'Samedi 20 Décembre 2025',
       activities: [
         {
           time: '10:00',
@@ -235,9 +235,9 @@ const Program: React.FC = () => {
       ]
     },
     {
-      date: '17 Mars',
+      date: '21 Décembre',
       day: 'Dimanche',
-      fullDate: 'Dimanche 17 Mars 2025',
+      fullDate: 'Dimanche 21 Décembre 2025',
       activities: [
         {
           time: '10:00',
@@ -389,7 +389,7 @@ const Program: React.FC = () => {
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-gray-900 text-white px-4 py-2 rounded-full mb-6">
             <Calendar size={18} />
-            <span className="text-sm font-semibold">15-17 Mars 2025 • 3 Jours d'Animations</span>
+            <span className="text-sm font-semibold">19-21 Décembre 2025 • 3 Jours d'Animations</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
             Programme complet

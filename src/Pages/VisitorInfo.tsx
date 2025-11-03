@@ -375,15 +375,15 @@ const VisitorInfo: React.FC = () => {
                 <Car className="text-gray-700" size={28} />
               </div>
               <h3 className="font-semibold text-lg mb-2 text-gray-900">En voiture</h3>
-              <p className="text-gray-600 text-sm">Parking gratuit. GPS: Hôtel Sarakawa de Lomé</p>
+              <p className="text-gray-600 text-sm">Parking Chapiteaux. GPS: Hôtel Sarakawa de Lomé</p>
             </div>
 
             <div className="bg-white rounded-xl p-6 shadow-sm text-center">
               <div className="w-16 h-16 mx-auto mb-4 bg-gray-100 rounded-full flex items-center justify-center">
                 <Bus className="text-gray-700" size={28} />
               </div>
-              <h3 className="font-semibold text-lg mb-2 text-gray-900">En bus</h3>
-              <p className="text-gray-600 text-sm">Lignes 5, 12, 18 - Arrêt "Palais des Congrès"</p>
+              <h3 className="font-semibold text-lg mb-2 text-gray-900">En Moto</h3>
+              <p className="text-gray-600 text-sm">Parking Chapiteaux. GPS: Hôtel Sarakawa de Lomé</p>
             </div>
 
             <div className="bg-white rounded-xl p-6 shadow-sm text-center">

@@ -30,7 +30,7 @@ const Partners: React.FC = () => {
     title: "Nos Partenaires et Sponsors - La Foire Aux Cadeaux 2025",
     description: "Découvrez les marques et institutions qui soutiennent La Foire Aux Cadeaux. Opportunités de partenariat et sponsoring disponibles.",
     url: "https://foireauxcadeaux.anaisconcept.biz/partenaires",
-    image: "https://foireauxcadeaux.tg/og-partners.jpg",
+    image: "https://foireauxcadeaux.anaisconcept.biz/og-partners.jpg",
     keywords: "partenaires foire lomé, sponsors événement togo, partenariat salon"
   });
 
@@ -152,7 +152,7 @@ const Partners: React.FC = () => {
       </section>
 
       {/* Platinum Partners */}
-      <section className="py-16 px-4 bg-gray-50">
+{/*       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 bg-gray-900 text-white px-4 py-2 rounded-full mb-4">
@@ -180,10 +180,10 @@ const Partners: React.FC = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Gold Partners */}
-      <section className="py-16 px-4">
+{/*       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 bg-yellow-600 text-white px-4 py-2 rounded-full mb-4">
@@ -211,10 +211,10 @@ const Partners: React.FC = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Silver Partners Carousel */}
-      <section className="py-16 px-4 bg-gray-50">
+{/*       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 bg-gray-500 text-white px-4 py-2 rounded-full mb-4">
@@ -258,7 +258,7 @@ const Partners: React.FC = () => {
             ))}
           </Swiper>
         </div>
-      </section>
+      </section> */}
 
       {/* Partner Testimonials Carousel */}
       <section className="py-16 px-4 bg-gray-900 text-white">
@@ -382,7 +382,7 @@ const Partners: React.FC = () => {
                 Demander un dossier
               </a>
               <a
-                href="https://wa.me/22890123456?text=Bonjour,%20je%20souhaite%20des%20informations%20sur%20les%20opportunités%20de%20partenariat"
+                href="https://wa.me/22890123148?text=Bonjour,%20je%20souhaite%20des%20informations%20sur%20les%20opportunités%20de%20partenariat"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="border-2 border-gray-900 hover:bg-gray-900 hover:text-white text-gray-900 px-8 py-4 rounded-lg font-semibold transition-all"

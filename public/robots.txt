@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://foireauxcadeaux.tg/sitemap.xml
+Sitemap: https://foireauxcadeaux.anaisconcept.biz/sitemap.xml
 
 # Block common bot paths (optional)
 Disallow: /api/

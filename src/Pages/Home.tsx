@@ -29,19 +29,19 @@ const Home: React.FC = () => {
       name: "Marie Kouassi", 
       role: "Exposante - Bijoux artisanaux", 
       content: "Une expérience incroyable ! J'ai vendu plus en 3 jours qu'en un mois normal.",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b9d80e9a?w=80&h=80&fit=crop&crop=face"
+      avatar: "https://anaisconcept.biz/wp-content/uploads/2025/11/Logo_FAC.png?w=80&h=80&fit=crop&crop=face"
     },
     { 
       name: "Jean-Baptiste Agbo", 
       role: "Visiteur fidèle", 
       content: "Chaque année, je trouve des cadeaux uniques. C'est devenu notre sortie familiale préférée !",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face"
+      avatar: "https://anaisconcept.biz/wp-content/uploads/2025/11/Logo_FAC.png?w=80&h=80&fit=crop&crop=face"
     },
     { 
       name: "Fatima Al-Hassan", 
       role: "Directrice Marketing", 
       content: "Excellent retour sur investissement pour notre marque. Le public est très engagé.",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face"
+      avatar: "https://anaisconcept.biz/wp-content/uploads/2025/11/Logo_FAC.png?w=80&h=80&fit=crop&crop=face"
     }
   ];
 

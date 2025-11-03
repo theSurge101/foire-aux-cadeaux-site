@@ -49,7 +49,7 @@ interface AccreditationForm {
 const KEY_FACTS: KeyFact[] = [
   {
     icon: Users,
-    number: '+10,000',
+    number: '+3,000',
     label: 'Visiteurs attendus',
     detail: 'Sur 3 jours'
   },
@@ -62,14 +62,14 @@ const KEY_FACTS: KeyFact[] = [
   {
     icon: Calendar,
     number: '3 jours',
-    label: '15-17 Mars 2025',
-    detail: 'Palais des Congrès'
+    label: '19-21 Décembre 2025',
+    detail: 'Hôtel Sarakawa, Lomé'
   },
   {
     icon: Award,
-    number: '4ème',
+    number: '11ème',
     label: 'Édition',
-    detail: 'Depuis 2022'
+    detail: 'Depuis 2016'
   }
 ];
 
@@ -77,7 +77,7 @@ const PRESS_RELEASES: PressRelease[] = [
   {
     date: '15 Janvier 2025',
     title: 'Lancement de la 4ème édition de La Foire Aux Cadeaux',
-    excerpt: 'La Foire Aux Cadeaux revient du 15 au 17 mars 2025 avec plus de 150 exposants et de nombreuses nouveautés.',
+    excerpt: 'La Foire Aux Cadeaux revient du 15 au 21 Décembre 2025 avec plus de 150 exposants et de nombreuses nouveautés.',
     link: '/press/communique-lancement-2025.pdf',
     category: 'announcement'
   },
@@ -123,24 +123,24 @@ const MEDIA_ASSETS: MediaAsset[] = [
     format: 'JPG HD',
     size: '250 MB',
     downloadLink: '/press/photos-2024.zip',
-    previewUrl: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=300&h=150&fit=crop'
+    previewUrl: 'https://anaisconcept.biz/wp-content/uploads/2025/09/DSC_9801-scaled.jpg?w=300&h=150&fit=crop'
   }
 ];
 
 const MEDIA_CONTACTS: MediaContact[] = [
   {
-    name: 'Amina Koffi',
-    role: 'Responsable Communication',
-    email: 'presse@foireauxcadeaux.tg',
-    phone: '+228 90 12 34 56',
-    photo: 'https://images.unsplash.com/photo-1494790108755-2616b9d80e9a?w=100&h=100&fit=crop'
+    name: 'Deladem Sodatonou',
+    role: 'Directrice Comité d\'Organisation',
+    email: 'infos@anaisconcept.biz',
+    phone: '+228 90 12 31 48',
+    photo: 'https://anaisconcept.biz/wp-content/uploads/2024/08/DSC_1701.webp?w=100&h=100&fit=crop'
   },
   {
-    name: 'Jean-Marc Agbo',
-    role: 'Relations Médias',
-    email: 'media@foireauxcadeaux.tg',
-    phone: '+228 91 23 45 67',
-    photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop'
+    name: 'Fèmi Tossou',
+    role: 'Responsable Marketing',
+    email: 'infos@anaisconcept.biz',
+    phone: '+228 98 02 52 70',
+    photo: 'https://anaisconcept.biz/wp-content/uploads/2024/08/DSC_1739.webp?w=100&h=100&fit=crop'
   }
 ];
 
@@ -399,7 +399,7 @@ const AccreditationSection: React.FC = () => {
                 icon={Phone}
                 value={form.phone}
                 onChange={(value) => updateField('phone', value)}
-                placeholder="+228 90 12 34 56"
+                placeholder="+228 90 12 31 48"
                 type="tel"
               />
             </div>
@@ -502,8 +502,8 @@ const Press: React.FC = () => {
   useSEO({
     title: "Espace Presse - La Foire Aux Cadeaux 2025 | Dossier de Presse & Médias",
     description: "Dossier de presse, communiqués, photos HD, vidéos et demandes d'accréditation.",
-    url: "https://foireauxcadeaux.tg/presse",
-    image: "https://foireauxcadeaux.tg/og-press.jpg",
+    url: "https://foireauxcadeaux.anaisconcept.biz/presse",
+    image: "https://foireauxcadeaux.anaisconcept.biz/og-press.jpg",
     keywords: "dossier presse lomé, communiqué foire cadeaux, accréditation média togo"
   });
 

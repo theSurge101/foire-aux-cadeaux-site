@@ -13,7 +13,7 @@ interface SEOHeadProps {
 const SEOHead: React.FC<SEOHeadProps> = ({ 
   title = "La Foire Aux Cadeaux 2025 - L'expérience shopping incontournable à Lomé",
   description = "Découvrez La Foire Aux Cadeaux 2025 du 19-21 Décembre à l'hôtel Sarakawa de Lomé. Plus de 100 exposants, artisans locaux, cadeaux uniques et expériences familiales.",
-  image = "https://foireauxcadeaux.tg/og-image.jpg",
+  image = "https://foireauxcadeaux.anaisconcept.biz/og-image.jpg",
   url = "https://foireauxcadeaux.anaisconcept.biz",
   type = "website",
   keywords = "foire aux cadeaux, salon lomé, shopping togo, exposition lomé, artisans togo"

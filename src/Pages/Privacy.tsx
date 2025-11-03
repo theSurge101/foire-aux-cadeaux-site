@@ -7,10 +7,10 @@ const Privacy: React.FC = () => {
   useSEO({
     title: "Politique de Confidentialité - La Foire Aux Cadeaux",
     description: "Protection des données personnelles et politique de confidentialité de La Foire Aux Cadeaux. Vos droits et nos engagements.",
-    url: "https://foireauxcadeaux.tg/confidentialite"
+    url: "https://foireauxcadeaux.anaisconcept.biz/confidentialite"
   });
 
-  const lastUpdate = "15 janvier 2025";
+  const lastUpdate = "03 novembre 2025";
 
   const dataTypes = [
     {
@@ -100,14 +100,14 @@ const Privacy: React.FC = () => {
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Introduction</h2>
               <div className="text-gray-700 space-y-4">
                 <p>
-                  Events Togo SARL, organisateur de La Foire Aux Cadeaux, s'engage à protéger la confidentialité 
+                  ANAÏS Concept, organisateur de La Foire Aux Cadeaux, s'engage à protéger la confidentialité 
                   et la sécurité de vos données personnelles. Cette politique de confidentialité décrit comment 
                   nous collectons, utilisons, stockons et partageons vos informations personnelles lorsque vous 
                   utilisez notre site web ou participez à notre événement.
                 </p>
                 <p>
                   Nous nous conformons à la législation togolaise en matière de protection des données, notamment 
-                  la loi n° 2019-014 du 29 octobre 2019 relative à la protection des données à caractère personnel, 
+                  la loi n° 2019-014 du 29 octobre 2019 relative à la protection des données à caractère personnelles, 
                   ainsi qu'aux meilleures pratiques internationales en la matière.
                 </p>
                 <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 flex items-start gap-3">
@@ -127,12 +127,12 @@ const Privacy: React.FC = () => {
               <div className="text-gray-700 space-y-4">
                 <p>Le responsable du traitement de vos données personnelles est :</p>
                 <div className="bg-gray-50 rounded-lg p-6">
-                  <p className="font-semibold text-gray-900 mb-4">Events Togo SARL</p>
+                  <p className="font-semibold text-gray-900 mb-4">ANAÏS Concept</p>
                   <div className="space-y-2 text-sm">
-                    <p>Quartier Nyékonakpoè, Avenue de la Libération</p>
+                    <p>558 Avenue Kleber Dadjo, Maritime 01 BP 2930</p>
                     <p>Lomé, Togo</p>
-                    <p className="mt-3"><strong>Email :</strong> <a href="mailto:privacy@foireauxcadeaux.tg" className="text-gray-900 hover:underline">privacy@foireauxcadeaux.tg</a></p>
-                    <p><strong>Téléphone :</strong> <a href="tel:+22890123456" className="text-gray-900 hover:underline">+228 90 12 34 56</a></p>
+                    <p className="mt-3"><strong>Email :</strong> <a href="mailto:infos@anaisconcept.biz" className="text-gray-900 hover:underline">infos@anaisconcept.biz</a></p>
+                    <p><strong>Téléphone :</strong> <a href="tel:+22890123148" className="text-gray-900 hover:underline">+228 90 12 31 48</a></p>
                   </div>
                 </div>
               </div>
@@ -274,8 +274,8 @@ const Privacy: React.FC = () => {
                     Pour exercer l'un de ces droits, contactez-nous :
                   </p>
                   <div className="space-y-2 text-sm text-blue-900">
-                    <p><strong>Email :</strong> <a href="mailto:privacy@foireauxcadeaux.tg" className="underline">privacy@foireauxcadeaux.tg</a></p>
-                    <p><strong>Courrier :</strong> Events Togo SARL - DPO, Quartier Nyékonakpoè, Lomé, Togo</p>
+                    <p><strong>Email :</strong> <a href="mailto:infos@anaisconcept.biz" className="underline">infos@anaisconcept.biz</a></p>
+                    <p><strong>Courrier :</strong> ANAÏS Concept558 Avenue Kleber Dadjo, Maritime 01 BP 2930, Lomé, Togo</p>
                   </div>
                   <p className="text-sm text-blue-900 mt-3">
                     Nous répondons à toute demande dans un délai de 30 jours. Une pièce d'identité peut être 
@@ -288,7 +288,6 @@ const Privacy: React.FC = () => {
             {/* 8. Sécurité */}
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <Lock className="text-gray-700" size={24} />
                 <h2 className="text-2xl font-bold text-gray-900">8. Sécurité des données</h2>
               </div>
               <div className="text-gray-700 space-y-4">
@@ -328,7 +327,7 @@ const Privacy: React.FC = () => {
                   </div>
                   <div className="bg-gray-50 rounded-lg p-4">
                     <h4 className="font-semibold text-gray-900 mb-2">Cookies analytiques</h4>
-                    <p className="text-sm">Nous aident à comprendre comment vous utilisez le site (Google Analytics).</p>
+                    <p className="text-sm">Nous aident à comprendre comment vous utilisez le site (Google Analytics, Hubspot).</p>
                   </div>
                   <div className="bg-gray-50 rounded-lg p-4">
                     <h4 className="font-semibold text-gray-900 mb-2">Cookies marketing</h4>
@@ -372,29 +371,28 @@ const Privacy: React.FC = () => {
             {/* 12. Contact */}
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <Mail className="text-gray-700" size={24} />
                 <h2 className="text-2xl font-bold text-gray-900">12. Nous contacter</h2>
               </div>
               <div className="text-gray-700 space-y-4">
                 <p>
                   Pour toute question concernant cette politique de confidentialité ou le traitement de vos 
-                  données personnelles, contactez notre Délégué à la Protection des Données (DPO) :
+                  données personnelles, contactez notre Déléguée à la Protection des Données (DPO) :
                 </p>
                 <div className="bg-gray-50 rounded-lg p-6">
                   <div className="space-y-3">
-                    <p className="font-semibold text-gray-900">Délégué à la Protection des Données</p>
+                    <p className="font-semibold text-gray-900">Déléguée à la Protection des Données</p>
                     <div className="flex items-center gap-3">
                       <Mail size={18} className="text-gray-600" />
-                      <a href="mailto:privacy@foireauxcadeaux.tg" className="text-gray-900 hover:underline">
-                        privacy@foireauxcadeaux.tg
+                      <a href="mailto:infos@anaisconcept.biz" className="text-gray-900 hover:underline">
+                        infos@anaisconcept.biz
                       </a>
                     </div>
                     <div className="flex items-start gap-3">
                       <Lock size={18} className="text-gray-600 mt-1" />
                       <div>
-                        <p>Events Togo SARL - DPO</p>
-                        <p className="text-sm">Quartier Nyékonakpoè</p>
-                        <p className="text-sm">Avenue de la Libération</p>
+                        <p>ANAÏS Concept - DPO</p>
+                        <p className="text-sm">558 Avenue Kleber Dadjo</p>
+                        <p className="text-sm">Maritime 01 BP 2930</p>
                         <p className="text-sm">Lomé, Togo</p>
                       </div>
                     </div>
