@@ -10,7 +10,7 @@ const Legal: React.FC = () => {
     url: "https://foireauxcadeaux.tg/mentions-legales"
   });
 
-  const lastUpdate = "15 janvier 2025";
+  const lastUpdate = "03 Novembre 2025";
 
   return (
     <div className="pt-20">
@@ -46,15 +46,15 @@ const Legal: React.FC = () => {
               </div>
               <div className="space-y-4 text-gray-700">
                 <div className="bg-gray-50 rounded-lg p-6">
-                  <p className="font-semibold text-gray-900 mb-4">Events Togo SARL</p>
+                  <p className="font-semibold text-gray-900 mb-4">ANAÏS Concept</p>
                   <div className="space-y-2 text-sm">
                     <p><strong>Forme juridique :</strong> Société à Responsabilité Limitée (SARL)</p>
                     <p><strong>Capital social :</strong> 5,000,000 FCFA</p>
                     <p><strong>RCCM :</strong> TG-LFW-2022-B-12345</p>
                     <p><strong>IFU :</strong> 0123456789012</p>
-                    <p><strong>Siège social :</strong> Quartier Nyékonakpoè, Avenue de la Libération, Lomé, Togo</p>
-                    <p><strong>Email :</strong> <a href="mailto:info@foireauxcadeaux.tg" className="text-gray-900 hover:underline">info@foireauxcadeaux.tg</a></p>
-                    <p><strong>Téléphone :</strong> <a href="tel:+22890123456" className="text-gray-900 hover:underline">+228 90 12 34 56</a></p>
+                    <p><strong>Siège social :</strong> 558 Avenue Kleber Dadjo, Maritime 01 BP 2930, Lomé, Togo</p>
+                    <p><strong>Email :</strong> <a href="mailto:infos@anaisconcept.biz" className="text-gray-900 hover:underline">infos@anaisconcept.biz</a></p>
+                    <p><strong>Téléphone :</strong> <a href="tel:+22890123148" className="text-gray-900 hover:underline">+228 90 12 31 48</a></p>
                   </div>
                 </div>
               </div>
@@ -67,7 +67,7 @@ const Legal: React.FC = () => {
                 <h2 className="text-2xl font-bold text-gray-900">2. Directeur de publication</h2>
               </div>
               <div className="text-gray-700">
-                <p>Le directeur de la publication du site web foireauxcadeaux.tg est :</p>
+                <p>Le directeur de la publication du site web foireauxcadeaux.anaisconcept.biz est :</p>
                 <div className="bg-gray-50 rounded-lg p-6 mt-4">
                   <p className="font-semibold text-gray-900">Monsieur Kofi MENSAH</p>
                   <p className="text-sm mt-2">Gérant de Events Togo SARL</p>
