@@ -8,13 +8,13 @@ import useSEO from '../Hooks/useSEO';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-interface Partner {
+/* interface Partner {
   id: number;
   name: string;
   logo: string;
   category: 'platinum' | 'gold' | 'silver' | 'media';
   website?: string;
-}
+} */
 
 interface Testimonial {
   id: number;
@@ -35,7 +35,7 @@ const Partners: React.FC = () => {
   });
 
   // Partner logos - Replace with actual HubSpot CDN URLs
-  const partners: Partner[] = [
+/*   const partners: Partner[] = [
     // Platinum Partners
     { id: 1, name: "Ecobank Togo", logo: "https://via.placeholder.com/200x80/f5f5f5/333333?text=Ecobank", category: "platinum", website: "#" },
     { id: 2, name: "Togocom", logo: "https://via.placeholder.com/200x80/f5f5f5/333333?text=Togocom", category: "platinum", website: "#" },
@@ -55,7 +55,7 @@ const Partners: React.FC = () => {
     { id: 10, name: "Radio Lomé", logo: "https://via.placeholder.com/150x50/f5f5f5/cccccc?text=Radio+Lomé", category: "media", website: "#" },
     { id: 11, name: "TV7", logo: "https://via.placeholder.com/150x50/f5f5f5/cccccc?text=TV7", category: "media", website: "#" },
     { id: 12, name: "Le Togolais", logo: "https://via.placeholder.com/150x50/f5f5f5/cccccc?text=Le+Togolais", category: "media", website: "#" }
-  ];
+  ]; */
 
   const testimonials: Testimonial[] = [
     {
@@ -84,12 +84,12 @@ const Partners: React.FC = () => {
     }
   ];
 
-  const partnersByCategory = {
+/*   const partnersByCategory = {
     platinum: partners.filter(p => p.category === 'platinum'),
     gold: partners.filter(p => p.category === 'gold'),
     silver: partners.filter(p => p.category === 'silver'),
     media: partners.filter(p => p.category === 'media')
-  };
+  }; */
 
   return (
     <div className="pt-20">

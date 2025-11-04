@@ -1,5 +1,5 @@
 import React from 'react';
-import { Building, User, Globe, Mail, Phone, Shield, FileText, Calendar } from 'lucide-react';
+import { Building, Mail, Phone, FileText, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import useSEO from '../Hooks/useSEO';
 

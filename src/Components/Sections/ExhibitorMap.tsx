@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
-import { ZoomIn, ZoomOut, Maximize, MapPin, X } from 'lucide-react';
+import { ZoomIn, ZoomOut, Maximize, X } from 'lucide-react';
 
 interface Exhibitor {
   id: number;

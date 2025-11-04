@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Calendar, MapPin, Clock, Users, Gift, Heart, ShoppingBag, ChevronRight, Download, Phone, Mail, Instagram, Facebook, MessageCircle, Trophy, Zap, Shield } from 'lucide-react';
 
 

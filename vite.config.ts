@@ -1,7 +1,23 @@
+// vite.config.ts
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
+// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  resolve: {
+    alias: {
+      '@': '/src',
+      '@components': '/src/components',
+      '@pages': '/src/pages'
+    }
+  },
+  server: {
+    port: 3000,
+    open: true // Automatically open browser
+  },
+  build: {
+    outDir: 'dist',
+    sourcemap: true
+  }
 })

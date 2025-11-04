@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Calendar, MapPin, Clock, Users, Gift, Heart, ShoppingBag, Mic, Star, ChevronRight, Download, Zap, Shield, Trophy, MessageCircle } from 'lucide-react';
+import { Calendar, MapPin, Clock, Users, Gift, Heart, ShoppingBag, ChevronRight, Download, Zap, Shield, Trophy, MessageCircle } from 'lucide-react';
 import type { Testimonial, NewsletterForm } from '../types';
 import useSEO from '../Hooks/useSEO';
 

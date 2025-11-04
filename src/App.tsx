@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-// Layout
+// Layout & Components
 import Layout from './Components/Layouts/Layout';
+import ScrollToTop from './Components/Common/ScrollToTop';
 
 // Pages
 import Home from './Pages/Home';
@@ -22,6 +22,7 @@ import NotFound from './Pages/NotFound';
 const App: React.FC = () => {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         {/* Main pages with layout */}
         <Route path="/" element={<Layout />}>

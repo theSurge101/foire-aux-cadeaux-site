@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Check, Star, Zap, Shield, Gift, Crown, Camera, Coffee, Car, Users, Sparkles, Calendar, Clock, MapPin, ChevronRight, X, CreditCard, Smartphone } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Check, Star, Zap, Shield, Gift, Crown, Camera, Coffee, Car, Users, Sparkles, ChevronRight, X, CreditCard, Smartphone } from 'lucide-react';
 import useSEO from '../Hooks/useSEO';
 
 interface Benefit {

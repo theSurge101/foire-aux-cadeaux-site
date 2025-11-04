@@ -1,21 +1,33 @@
+# robots.txt for foire-aux-cadeaux-site
+# Single-page React app (Vite) — public routes served from index.html
+
 User-agent: *
+# Allow crawling of all public pages and static assets
 Allow: /
 
-# Sitemap
+# Disallow internal or non-public paths that should not be indexed
+# (these paths are not normally served from production, but keep them explicit)
+Disallow: /admin/
+Disallow: /api/
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /.git/
+
+# Important site routes (for reference):
+# /                (home)
+# /liste-exposants  (exhibitors list)
+# /exposants       (exhibitor detail / info)
+# /partenaires     (partners)
+# /contact         (contact page)
+# /programme       (program)
+# /presse          (press)
+# /infos-pratiques (practical info)
+# /pass-premium    (premium pass)
+# /mentions-legales (legal)
+# /confidentialite  (privacy)
+
+# Sitemap (if you publish a sitemap at this location)
 Sitemap: https://foireauxcadeaux.anaisconcept.biz/sitemap.xml
 
-# Block common bot paths (optional)
-Disallow: /api/
-Disallow: /_next/
-Disallow: /admin/
-
-# Allow social media bots
-User-agent: facebookexternalhit/*
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-# Crawl delay for slower bots
-User-agent: *
-Crawl-delay: 1
+# Optional: small crawl delay for very aggressive crawlers (seconds)
+# Crawl-delay: 1

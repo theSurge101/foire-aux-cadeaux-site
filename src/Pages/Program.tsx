@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calendar, Clock, MapPin, Users, Music, Palette, Utensils, Trophy, Heart, Baby, ShoppingBag, Download, Bell, Star, Sparkles, ChevronRight, Filter } from 'lucide-react';
+import { Calendar, Clock, MapPin, Users, Music, Palette, Utensils, Trophy, Heart, Baby, Download, Bell, Star, Sparkles, Filter } from 'lucide-react';
 import useSEO from '../Hooks/useSEO';
 
 interface Activity {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Download, FileText, Image as ImageIcon, Video, Users, Calendar, Award, TrendingUp, Mail, Phone, ExternalLink, CheckCircle, AlertCircle, User, Building } from 'lucide-react';
+import { Download, FileText, Image as ImageIcon, Video, Users, Calendar, Award, TrendingUp, Mail, Phone, CheckCircle, AlertCircle, User, Building } from 'lucide-react';
 import useSEO from '../Hooks/useSEO';
 
 // Types

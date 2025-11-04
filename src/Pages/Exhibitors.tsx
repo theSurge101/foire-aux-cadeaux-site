@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Search, MapPin, Phone, Mail, ExternalLink, Instagram, Facebook, Filter, X, ChevronDown, Award, Star, Map, Grid } from 'lucide-react';
+import { Search, MapPin, Phone, Mail, ExternalLink, Instagram, Facebook, Filter, X, ChevronDown, Star, Map, Grid } from 'lucide-react';
 import useSEO from '../Hooks/useSEO';
 import ExhibitorMap from '../Components/Sections/ExhibitorMap';
 
@@ -360,8 +360,10 @@ const Exhibitors: React.FC = () => {
             <ExhibitorMap
               exhibitors={filteredExhibitors}
               selectedExhibitor={selectedExhibitor}
-              onExhibitorClick={(exhibitor) => 
-                setSelectedExhibitor(selectedExhibitor?.id === exhibitor.id ? null : exhibitor)
+              onExhibitorClick={(exhibitor) =>
+                setSelectedExhibitor(prev =>
+                  prev?.id === (exhibitor as Exhibitor).id ? null : (exhibitor as Exhibitor)
+                )
               }
             />
           ) : filteredExhibitors.length > 0 ? (
