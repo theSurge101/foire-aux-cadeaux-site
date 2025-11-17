@@ -11,6 +11,7 @@ import VisitorInfo from './Pages/VisitorInfo';
 import PremiumPass from './Pages/PremiumPass';
 import Program from './Pages/Program';
 import Exhibitors from './Pages/Exhibitors';
+import ExhibitorDetailPage from './Pages/ExhibitorDetailPage';
 import PracticalInfo from './Pages/PracticalInfo';
 import Press from './Pages/Press';
 import Partners from './Pages/Partners';
@@ -32,6 +33,7 @@ const App: React.FC = () => {
           <Route path="pass-premium" element={<PremiumPass />} />
           <Route path="programme" element={<Program />} />
           <Route path="liste-exposants" element={<Exhibitors />} />
+          <Route path="exposants/:exhibitorSlug" element={<ExhibitorDetailPage />} />
           <Route path="infos-pratiques" element={<PracticalInfo />} />
           <Route path="presse" element={<Press />} />
           <Route path="partenaires" element={<Partners />} />

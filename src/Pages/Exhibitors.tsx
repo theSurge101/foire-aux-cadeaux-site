@@ -2,31 +2,9 @@ import React, { useState, useMemo } from 'react';
 import { Search, MapPin, Phone, Mail, ExternalLink, Instagram, Facebook, Filter, X, ChevronDown, Star, Map, Grid } from 'lucide-react';
 import useSEO from '../Hooks/useSEO';
 import ExhibitorMap from '../Components/Sections/ExhibitorMap';
+import { exhibitorsData, Exhibitor } from '../Data/ExhibitorData';
+import { Link } from 'react-router-dom';
 
-interface Exhibitor {
-  id: number;
-  name: string;
-  category: string;
-  description: string;
-  products: string[];
-  logo: string;
-  photo: string;
-  standNumber: string;
-  coordinates: {
-    x: number;
-    y: number;
-  };
-  contact: {
-    phone?: string;
-    email?: string;
-    website?: string;
-    instagram?: string;
-    facebook?: string;
-  };
-  location: string;
-  featured?: boolean;
-  new?: boolean;
-}
 
 const Exhibitors: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -51,171 +29,16 @@ const Exhibitors: React.FC = () => {
     { id: 'home', label: 'Décoration & Maison', count: 25 },
     { id: 'food', label: 'Gastronomie & Terroir', count: 18 },
     { id: 'art', label: 'Art & Artisanat', count: 15 },
-    { id: 'accessories', label: 'Accessoires & Maroquinerie', count: 9 }
+    { id: 'accessories', label: 'Accessoires & Maroquinerie', count: 9 },
+    { id: 'others', label: 'Autres', count: 0 } // Placeholder for uncategorized exhibitors
   ];
 
-  // Sample exhibitors data - Replace with real data from your backend/API
-  const exhibitors: Exhibitor[] = [
-    {
-      id: 1,
-      name: "Bijoux Koffi",
-      category: "jewelry",
-      description: "Créations artisanales de bijoux en or, argent et pierres précieuses. Designs modernes inspirés de la tradition togolaise.",
-      products: ["Colliers", "Bracelets", "Boucles d'oreilles", "Bagues"],
-      logo: "https://via.placeholder.com/150/FFD700/333333?text=BK",
-      photo: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&h=300&fit=crop",
-      standNumber: "A12",
-      coordinates: { x: 20, y: 25 },
-      contact: {
-        phone: "+228 90 11 22 33",
-        email: "contact@bijouxkoffi.tg",
-        instagram: "@bijouxkoffi",
-        website: "https://bijouxkoffi.tg"
-      },
-      location: "Lomé, Togo",
-      featured: true,
-      new: false
-    },
-    {
-      id: 2,
-      name: "Les Savons d'Amina",
-      category: "beauty",
-      description: "Savons naturels et cosmétiques bio fabriqués à la main avec des ingrédients locaux. Respectueux de l'environnement.",
-      products: ["Savons naturels", "Huiles essentielles", "Beurre de karité", "Crèmes"],
-      logo: "https://via.placeholder.com/150/98D8C8/333333?text=SA",
-      photo: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=400&h=300&fit=crop",
-      standNumber: "B08",
-      coordinates: { x: 35, y: 30 },
-      contact: {
-        phone: "+228 91 22 33 44",
-        email: "amina@savonsnaturels.tg",
-        facebook: "LesSavonsDAmina"
-      },
-      location: "Kara, Togo",
-      featured: false,
-      new: true
-    },
-    {
-      id: 3,
-      name: "Akodé Déco",
-      category: "home",
-      description: "Décoration intérieure africaine contemporaine. Meubles, textiles et objets d'art pour sublimer votre maison.",
-      products: ["Meubles", "Coussins", "Tableaux", "Lampes"],
-      logo: "https://via.placeholder.com/150/F6AD55/333333?text=AD",
-      photo: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=400&h=300&fit=crop",
-      standNumber: "C15",
-      coordinates: { x: 60, y: 35 },
-      contact: {
-        phone: "+228 92 33 44 55",
-        email: "info@akodedeco.tg",
-        website: "https://akodedeco.tg",
-        instagram: "@akodedeco"
-      },
-      location: "Lomé, Togo",
-      featured: true,
-      new: false
-    },
-    {
-      id: 4,
-      name: "Mode Afi",
-      category: "fashion",
-      description: "Prêt-à-porter féminin afro-chic. Collections exclusives mêlant tradition et modernité pour la femme élégante.",
-      products: ["Robes", "Ensembles", "Vestes", "Pantalons"],
-      logo: "https://via.placeholder.com/150/ED64A6/333333?text=MA",
-      photo: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=400&h=300&fit=crop",
-      standNumber: "A05",
-      coordinates: { x: 25, y: 55 },
-      contact: {
-        phone: "+228 93 44 55 66",
-        email: "contact@modeafi.tg",
-        instagram: "@modeafi",
-        facebook: "ModeAfi"
-      },
-      location: "Lomé, Togo",
-      featured: false,
-      new: true
-    },
-    {
-      id: 5,
-      name: "Épices du Sahel",
-      category: "food",
-      description: "Épices, condiments et produits du terroir togolais. 100% naturels et sans conservateurs.",
-      products: ["Épices", "Piments", "Sauces", "Thés"],
-      logo: "https://via.placeholder.com/150/F97316/FFFFFF?text=ES",
-      photo: "https://images.unsplash.com/photo-1596040033229-a0b55ee30e5d?w=400&h=300&fit=crop",
-      standNumber: "D20",
-      coordinates: { x: 80, y: 60 },
-      contact: {
-        phone: "+228 94 55 66 77",
-        email: "epices@sahel.tg"
-      },
-      location: "Dapaong, Togo",
-      featured: false,
-      new: false
-    },
-    {
-      id: 6,
-      name: "Art & Traditions",
-      category: "art",
-      description: "Sculptures, peintures et artisanat traditionnel togolais revisité. Pièces uniques réalisées par des artisans locaux.",
-      products: ["Sculptures", "Peintures", "Masques", "Poteries"],
-      logo: "https://via.placeholder.com/150/8B5CF6/FFFFFF?text=AT",
-      photo: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=400&h=300&fit=crop",
-      standNumber: "E10",
-      coordinates: { x: 45, y: 70 },
-      contact: {
-        phone: "+228 95 66 77 88",
-        email: "contact@arttraditions.tg",
-        website: "https://arttraditions.tg"
-      },
-      location: "Sokodé, Togo",
-      featured: true,
-      new: false
-    },
-    {
-      id: 7,
-      name: "Maroquinerie Prestige",
-      category: "accessories",
-      description: "Sacs, ceintures et accessoires en cuir véritable. Fabrication artisanale et designs exclusifs.",
-      products: ["Sacs à main", "Portefeuilles", "Ceintures", "Bagages"],
-      logo: "https://via.placeholder.com/150/7C3AED/FFFFFF?text=MP",
-      photo: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=400&h=300&fit=crop",
-      standNumber: "B18",
-      coordinates: { x: 70, y: 40 },
-      contact: {
-        phone: "+228 96 77 88 99",
-        email: "prestige@maroquinerie.tg",
-        instagram: "@maroquinerieprestige"
-      },
-      location: "Lomé, Togo",
-      featured: false,
-      new: false
-    },
-    {
-      id: 8,
-      name: "Chocolat Togolais",
-      category: "food",
-      description: "Chocolats artisanaux à base de cacao togolais. Pralinés, tablettes et confiseries premium.",
-      products: ["Tablettes", "Pralinés", "Truffes", "Pâtes à tartiner"],
-      logo: "https://via.placeholder.com/150/78350F/FFFFFF?text=CT",
-      photo: "https://images.unsplash.com/photo-1511381939415-e44015466834?w=400&h=300&fit=crop",
-      standNumber: "D12",
-      coordinates: { x: 55, y: 65 },
-      contact: {
-        phone: "+228 97 88 99 00",
-        email: "info@chocolattogo.tg",
-        website: "https://chocolattogo.tg",
-        facebook: "ChocolatTogolais"
-      },
-      location: "Kpalimé, Togo",
-      featured: true,
-      new: true
-    }
-  ];
+  // Sample exhibitors data was here - Replaced with real data from your backend/API
+
 
   // Filter and search logic
   const filteredExhibitors = useMemo(() => {
-    let filtered = exhibitors;
+    let filtered = exhibitorsData;
 
     // Filter by category
     if (selectedCategory !== 'all') {
@@ -241,7 +64,7 @@ const Exhibitors: React.FC = () => {
       if (!a.new && b.new) return 1;
       return a.name.localeCompare(b.name);
     });
-  }, [exhibitors, selectedCategory, searchQuery]);
+  }, [exhibitorsData, selectedCategory, searchQuery]);
 
   const currentCategory = categories.find(cat => cat.id === selectedCategory);
 
@@ -369,134 +192,142 @@ const Exhibitors: React.FC = () => {
           ) : filteredExhibitors.length > 0 ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredExhibitors.map((exhibitor) => (
-                <div
-                  key={exhibitor.id}
-                  className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-gray-100"
-                >
-                  {/* Photo */}
-                  <div className="relative h-48 bg-gray-200">
-                    <img
-                      src={exhibitor.photo}
-                      alt={exhibitor.name}
-                      className="w-full h-full object-cover"
-                    />
-                    {exhibitor.featured && (
-                      <div className="absolute top-3 left-3 bg-yellow-500 text-gray-900 px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1">
-                        <Star size={12} />
-                        Coup de cœur
-                      </div>
-                    )}
-                    {exhibitor.new && (
-                      <div className="absolute top-3 right-3 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
-                        Nouveau 2025
-                      </div>
-                    )}
-                    {/* Logo Overlay */}
-                    <div className="absolute -bottom-6 left-4">
-                      <div className="w-16 h-16 bg-white rounded-lg shadow-lg overflow-hidden border-2 border-white">
-                        <img
-                          src={exhibitor.logo}
-                          alt={`${exhibitor.name} logo`}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    </div>
-                  </div>
+              <Link 
+    key={exhibitor.id} 
+    to={`/exposants/${exhibitor.slug}`}
+    className="block" // Important: makes the entire card clickable
+  >
+    <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-gray-100 cursor-pointer">
+      {/* ALL YOUR EXISTING CARD CONTENT STAYS EXACTLY THE SAME */}
+      <div className="relative h-48 bg-gray-200">
+        <img
+          src={exhibitor.photo}
+          alt={exhibitor.name}
+          className="w-full h-full object-cover"
+        />
+        {exhibitor.featured && (
+          <div className="absolute top-3 left-3 bg-yellow-500 text-gray-900 px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1">
+            <Star size={12} />
+            Coup de cœur
+          </div>
+        )}
+        {exhibitor.new && (
+          <div className="absolute top-3 right-3 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+            Nouveau 2025
+          </div>
+        )}
+        {/* Logo Overlay */}
+        <div className="absolute -bottom-6 left-4">
+          <div className="w-16 h-16 bg-white rounded-lg shadow-lg overflow-hidden border-2 border-white">
+            <img
+              src={exhibitor.logo}
+              alt={`${exhibitor.name} logo`}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
 
-                  {/* Content */}
-                  <div className="p-6 pt-8">
-                    <div className="flex items-start justify-between mb-3">
-                      <div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-1">{exhibitor.name}</h3>
-                        <div className="flex items-center gap-2 text-sm text-gray-600">
-                          <MapPin size={14} />
-                          <span>{exhibitor.location}</span>
-                        </div>
-                      </div>
-                      <div className="bg-gray-100 text-gray-900 px-3 py-1 rounded-lg text-sm font-semibold">
-                        Stand {exhibitor.standNumber}
-                      </div>
-                    </div>
+      {/* Content */}
+      <div className="p-6 pt-8">
+        <div className="flex items-start justify-between mb-3">
+          <div>
+            <h3 className="text-xl font-bold text-gray-900 mb-1">{exhibitor.name}</h3>
+            <div className="flex items-center gap-2 text-sm text-gray-600">
+              <MapPin size={14} />
+              <span>{exhibitor.location}</span>
+            </div>
+          </div>
+          <div className="bg-gray-100 text-gray-900 px-3 py-1 rounded-lg text-sm font-semibold">
+            Stand {exhibitor.standNumber}
+          </div>
+        </div>
 
-                    <p className="text-gray-600 text-sm mb-4 line-clamp-3">
-                      {exhibitor.description}
-                    </p>
+        <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+          {exhibitor.description}
+        </p>
 
-                    {/* Products */}
-                    <div className="mb-4">
-                      <div className="flex flex-wrap gap-2">
-                        {exhibitor.products.slice(0, 3).map((product, index) => (
-                          <span
-                            key={index}
-                            className="bg-gray-50 text-gray-700 px-3 py-1 rounded-full text-xs"
-                          >
-                            {product}
-                          </span>
-                        ))}
-                        {exhibitor.products.length > 3 && (
-                          <span className="bg-gray-50 text-gray-700 px-3 py-1 rounded-full text-xs">
-                            +{exhibitor.products.length - 3}
-                          </span>
-                        )}
-                      </div>
-                    </div>
+        {/* Products */}
+        <div className="mb-4">
+          <div className="flex flex-wrap gap-2">
+            {exhibitor.products.slice(0, 3).map((product, index) => (
+              <span
+                key={index}
+                className="bg-gray-50 text-gray-700 px-3 py-1 rounded-full text-xs"
+              >
+                {product}
+              </span>
+            ))}
+            {exhibitor.products.length > 3 && (
+              <span className="bg-gray-50 text-gray-700 px-3 py-1 rounded-full text-xs">
+                +{exhibitor.products.length - 3}
+              </span>
+            )}
+          </div>
+        </div>
 
-                    {/* Contact */}
-                    <div className="flex flex-wrap gap-2 pt-4 border-t border-gray-100">
-                      {exhibitor.contact.phone && (
-                        <a
-                          href={`tel:${exhibitor.contact.phone}`}
-                          className="text-gray-600 hover:text-gray-900 transition-colors"
-                          title="Téléphone"
-                        >
-                          <Phone size={18} />
-                        </a>
-                      )}
-                      {exhibitor.contact.email && (
-                        <a
-                          href={`mailto:${exhibitor.contact.email}`}
-                          className="text-gray-600 hover:text-gray-900 transition-colors"
-                          title="Email"
-                        >
-                          <Mail size={18} />
-                        </a>
-                      )}
-                      {exhibitor.contact.website && (
-                        <a
-                          href={exhibitor.contact.website}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-gray-600 hover:text-gray-900 transition-colors"
-                          title="Site web"
-                        >
-                          <ExternalLink size={18} />
-                        </a>
-                      )}
-                      {exhibitor.contact.instagram && (
-                        <a
-                          href={`https://instagram.com/${exhibitor.contact.instagram.replace('@', '')}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-gray-600 hover:text-gray-900 transition-colors"
-                          title="Instagram"
-                        >
-                          <Instagram size={18} />
-                        </a>
-                      )}
-                      {exhibitor.contact.facebook && (
-                        <a
-                          href={`https://facebook.com/${exhibitor.contact.facebook}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-gray-600 hover:text-gray-900 transition-colors"
-                          title="Facebook"
-                        >
-                          <Facebook size={18} />
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                </div>
+        {/* Contact */}
+        <div className="flex flex-wrap gap-2 pt-4 border-t border-gray-100">
+          {exhibitor.contact.phone && (
+            <a
+              href={`tel:${exhibitor.contact.phone}`}
+              className="text-gray-600 hover:text-gray-900 transition-colors"
+              title="Téléphone"
+              onClick={(e) => e.stopPropagation()} // Prevents Link navigation when clicking phone
+            >
+              <Phone size={18} />
+            </a>
+          )}
+          {exhibitor.contact.email && (
+            <a
+              href={`mailto:${exhibitor.contact.email}`}
+              className="text-gray-600 hover:text-gray-900 transition-colors"
+              title="Email"
+              onClick={(e) => e.stopPropagation()} // Prevents Link navigation when clicking email
+            >
+              <Mail size={18} />
+            </a>
+          )}
+          {exhibitor.contact.website && (
+            <a
+              href={exhibitor.contact.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-gray-900 transition-colors"
+              title="Site web"
+              onClick={(e) => e.stopPropagation()} // Prevents Link navigation when clicking website
+            >
+              <ExternalLink size={18} />
+            </a>
+          )}
+          {exhibitor.contact.instagram && (
+            <a
+              href={`https://instagram.com/${exhibitor.contact.instagram.replace('@', '')}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-gray-900 transition-colors"
+              title="Instagram"
+              onClick={(e) => e.stopPropagation()} // Prevents Link navigation when clicking Instagram
+            >
+              <Instagram size={18} />
+            </a>
+          )}
+          {exhibitor.contact.facebook && (
+            <a
+              href={`https://facebook.com/${exhibitor.contact.facebook}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-gray-900 transition-colors"
+              title="Facebook"
+              onClick={(e) => e.stopPropagation()} // Prevents Link navigation when clicking Facebook
+            >
+              <Facebook size={18} />
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+              </Link>
               ))}
             </div>
           ) : (

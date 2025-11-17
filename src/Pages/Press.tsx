@@ -75,10 +75,10 @@ const KEY_FACTS: KeyFact[] = [
 
 const PRESS_RELEASES: PressRelease[] = [
   {
-    date: '15 Janvier 2025',
-    title: 'Lancement de la 4ème édition de La Foire Aux Cadeaux',
-    excerpt: 'La Foire Aux Cadeaux revient du 15 au 21 Décembre 2025 avec plus de 150 exposants et de nombreuses nouveautés.',
-    link: '/press/communique-lancement-2025.pdf',
+    date: '05 novembre 2025',
+    title: 'Lancement de la 11ème édition de La Foire Aux Cadeaux',
+    excerpt: 'La Foire Aux Cadeaux revient du 19 au 21 Décembre 2025 avec plus de 150 exposants et de nombreuses nouveautés.',
+    link: 'https://26251321.fs1.hubspotusercontent-eu1.net/hubfs/26251321/FAC/Press_Releases/FAC11_Press_Release.pdf',
     category: 'announcement'
   },
   {
