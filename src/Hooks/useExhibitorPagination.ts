@@ -12,12 +12,31 @@ export const useExhibitorPagination = (exhibitors: Exhibitor[], itemsPerPage = 1
 
   const totalPages = Math.ceil(exhibitors.length / itemsPerPage);
 
+  const goToPage = (page: number) => {
+    setCurrentPage(Math.max(1, Math.min(page, totalPages)));
+  };
+
+  const nextPage = () => {
+    setCurrentPage(prev => Math.min(prev + 1, totalPages));
+  };
+
+  const prevPage = () => {
+    setCurrentPage(prev => Math.max(prev - 1, 1));
+  };
+
   return {
     paginatedExhibitors,
     currentPage,
     totalPages,
-    setCurrentPage,
+    goToPage,
+    nextPage,
+    prevPage,
     hasNextPage: currentPage < totalPages,
-    hasPrevPage: currentPage > 1
+    hasPrevPage: currentPage > 1,
+    startIndex: (currentPage - 1) * itemsPerPage + 1,
+    endIndex: Math.min(currentPage * itemsPerPage, exhibitors.length),
+    totalItems: exhibitors.length
   };
 };
+
+export default useExhibitorPagination;
