@@ -649,5 +649,31 @@ export const exhibitorsData: Exhibitor[] = [
     featured: true,
     new: false,
     hasDemo: true
+  }
+  {
+    id: 30,
+    slug: "dels",
+    name: "Dels",
+    category: "accessories",
+    description: "Belham Beauty crée des soins capillaires naturels et innovants, alliant ingrédients africains et actifs modernes, pour sublimer les cheveux texturés, redonner confiance aux femmes, tout en ayant un impact social.",
+    products: ["Soins capillaires naturels", "Produits pour cheveux texturés", "Cosmétiques africains"],
+    logo: "https://via.placeholder.com/150/8B0000/FFFFFF?text=AH",
+    photo: "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=400&h=300&fit=crop",
+    standNumber: "A01",
+    coordinates: { x: 15, y: 20 },
+    contact: {
+      phone: "+228 96 86 54 00",
+      email: "belhambeauty@gmail.com",
+      website: "https://belhambeauty.shop",
+      instagram: "@belhambeauty",
+      facebook: "Belhamempreinte",
+      tiktok: "@belhambeauty",
+      youtube: "@belhambeauty",
+      whatsapp: "+22896865400"
+    },
+    location: "Lomé, Togo",
+    featured: true,
+    new: false,
+    hasDemo: true
   },
 ];

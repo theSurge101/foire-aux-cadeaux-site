@@ -80,8 +80,8 @@ const PRESS_RELEASES: PressRelease[] = [
     excerpt: 'La Foire Aux Cadeaux revient du 19 au 21 Décembre 2025 avec plus de 150 exposants et de nombreuses nouveautés.',
     link: 'https://26251321.fs1.hubspotusercontent-eu1.net/hubfs/26251321/FAC/Press_Releases/FAC11_Press_Release.pdf',
     category: 'announcement'
-  },
-  {
+  }
+/*   {
     date: '10 Janvier 2025',
     title: 'Partenariat stratégique avec Ecobank Togo',
     excerpt: 'Ecobank devient partenaire Platinum de l\'édition 2025, renforçant son engagement envers l\'entrepreneuriat local.',
@@ -94,7 +94,7 @@ const PRESS_RELEASES: PressRelease[] = [
     excerpt: 'L\'édition 2024 a dépassé toutes les attentes avec une hausse de 20% de la fréquentation.',
     link: '/press/bilan-2024.pdf',
     category: 'results'
-  }
+  } */
 ];
 
 const MEDIA_ASSETS: MediaAsset[] = [
