@@ -32,26 +32,36 @@ export interface Exhibitor {
 export const exhibitorsData: Exhibitor[] = [
   {
     id: 1,
-    slug: "belham-beauty",
-    name: "Belham Beauty",
-    category: "beauty",
-    description: "Belham Beauty crée des soins capillaires naturels et innovants, alliant ingrédients africains et actifs modernes, pour sublimer les cheveux texturés, redonner confiance aux femmes, tout en ayant un impact social.",
-    products: ["Soins capillaires naturels", "Produits pour cheveux texturés", "Cosmétiques africains"],
-    logo: "https://via.placeholder.com/150/8B0000/FFFFFF?text=AH",
-    photo: "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=400&h=300&fit=crop",
-    standNumber: "A01",
-    coordinates: { x: 15, y: 20 },
-    contact: {
-      phone: "+228 96 86 54 00",
-      email: "belhambeauty@gmail.com",
-      website: "https://belhambeauty.shop",
-      instagram: "@belhambeauty",
-      facebook: "Belhamempreinte",
-      tiktok: "@belhambeauty",
-      youtube: "@belhambeauty",
-      whatsapp: "+22896865400"
+    slug: "anais-concept",
+    name: "ANAÏS Concept",
+    category: "Luxury Gifting & Expériences",
+    description:
+      "ANAÏS Concept est une maison spécialisée dans la création d’expériences haut de gamme. Elle conçoit des cadeaux d’exception, des expériences immersives et des concepts personnalisés pour les entreprises désireuses d’offrir une signature mémorable. Reconnue pour son savoir-faire togolais et son sens du détail, elle accompagne marques et institutions dans la création d’émotions uniques.",
+    products: [
+      "Cadeaux corporate premium",
+      "Luxury gifting sur mesure",
+      "Expériences immersives",
+      "Concepts événementiels haut de gamme",
+      "Kits VIP & coffrets personnalisés"
+    ],
+    logo: "https://exemple.com/assets/anaisconcept/logo.png",
+    photo: "https://exemple.com/assets/anaisconcept/photo-stand.jpg",
+    standNumber: "A12",
+    coordinates: {
+      x: 40,
+      y: 25
     },
-    location: "Lomé, Togo",
+    contact: {
+      phone: "+228 90 12 31 48",
+      email: "infos@anaisconcept.biz",
+      website: "https://www.anaisconcept.biz",
+      instagram: "https://instagram.com/anaisconcept",
+      facebook: "https://facebook.com/anaisconceptbiz",
+      tiktok: undefined,
+      whatsapp: "+22890123148",
+      youtube: undefined
+    },
+    location: "Hall Principal – Zone Premium",
     featured: true,
     new: false,
     hasDemo: true
@@ -613,5 +623,31 @@ export const exhibitorsData: Exhibitor[] = [
     featured: false,
     new: false,
     hasDemo: false
-  }
+  },
+  {
+    id: 29,
+    slug: "belham-beauty",
+    name: "Belham Beauty",
+    category: "beauty",
+    description: "Belham Beauty crée des soins capillaires naturels et innovants, alliant ingrédients africains et actifs modernes, pour sublimer les cheveux texturés, redonner confiance aux femmes, tout en ayant un impact social.",
+    products: ["Soins capillaires naturels", "Produits pour cheveux texturés", "Cosmétiques africains"],
+    logo: "https://via.placeholder.com/150/8B0000/FFFFFF?text=AH",
+    photo: "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=400&h=300&fit=crop",
+    standNumber: "A01",
+    coordinates: { x: 15, y: 20 },
+    contact: {
+      phone: "+228 96 86 54 00",
+      email: "belhambeauty@gmail.com",
+      website: "https://belhambeauty.shop",
+      instagram: "@belhambeauty",
+      facebook: "Belhamempreinte",
+      tiktok: "@belhambeauty",
+      youtube: "@belhambeauty",
+      whatsapp: "+22896865400"
+    },
+    location: "Lomé, Togo",
+    featured: true,
+    new: false,
+    hasDemo: true
+  },
 ];

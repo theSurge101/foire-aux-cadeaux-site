@@ -181,7 +181,7 @@ const PremiumPass: React.FC = () => {
           </div>
           
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            Pass Premium VIP
+            Pass Premium
           </h1>
           
           <p className="text-xl md:text-2xl mb-8 text-gray-200 leading-relaxed max-w-3xl mx-auto">

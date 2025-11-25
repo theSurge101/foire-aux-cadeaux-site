@@ -99,22 +99,22 @@ const PRESS_RELEASES: PressRelease[] = [
 
 const MEDIA_ASSETS: MediaAsset[] = [
   {
-    type: 'logo',
-    title: 'Logo Principal',
-    description: 'Logo officiel La Foire Aux Cadeaux en noir',
-    format: 'PNG, SVG',
-    size: '2 MB',
-    downloadLink: '/press/logo-principal.zip',
-    previewUrl: 'https://via.placeholder.com/300x150/111827/FFFFFF?text=Logo+Foire'
+    type: 'photo',
+    title: 'Affiche Principale',
+    description: 'Affiche officielle La Foire Aux Cadeaux en paysage',
+    format: 'JPG',
+    size: '1 MB',
+    downloadLink: 'https://26251321.fs1.hubspotusercontent-eu1.net/hubfs/26251321/FAC/FAC11/Femi%201920x1080px%20Horizontal.jpg',
+    previewUrl: 'https://26251321.fs1.hubspotusercontent-eu1.net/hubfs/26251321/FAC/FAC11/Femi%201920x1080px%20Horizontal.jpg'
   },
   {
-    type: 'logo',
-    title: 'Logo Blanc',
-    description: 'Logo pour fonds sombres',
-    format: 'PNG, SVG',
-    size: '2 MB',
-    downloadLink: '/press/logo-blanc.zip',
-    previewUrl: 'https://via.placeholder.com/300x150/FFFFFF/111827?text=Logo+Blanc'
+    type: 'photo',
+    title: 'Affiche Verticale',
+    description: 'Affiche officielle La Foire Aux Cadeaux en portrait',
+    format: 'JPG',
+    size: '1 MB',
+    downloadLink: 'https://26251321.fs1.hubspotusercontent-eu1.net/hubfs/26251321/FAC/FAC11/Femi%201080x1920px%20Vertical.jpg',
+    previewUrl: 'https://26251321.fs1.hubspotusercontent-eu1.net/hubfs/26251321/FAC/FAC11/Femi%201080x1920px%20Vertical.jpg'
   },
   {
     type: 'photo',

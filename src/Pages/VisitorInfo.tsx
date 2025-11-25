@@ -454,7 +454,7 @@ const VisitorInfo: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://wa.me/22890123148?text=Bonjour,%20j'ai%20une%20question%20sur%20ma%20visite"
+                href="https://wa.me/22890123148?text=Bonjour,%20j'ai%20une%20question%20sur%20ma%20visite%20FAC2025."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold transition-all flex items-center gap-2 justify-center"
