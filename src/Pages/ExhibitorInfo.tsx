@@ -46,13 +46,13 @@ const ExhibitorInfo: React.FC = () => {
     {
       name: 'Stand Standard',
       price: '200,000 FCFA',
-      features: ['Stand 3x3m équipé', 'Table + 2 chaises', 'Electricité', 'Badge exposant x2', 'Présence sur catalogue'],
+      features: ['Stand 3x2m équipé', 'Table + 2 chaises', 'Electricité', 'Badge exposant x2', 'Présence sur catalogue'],
       popular: false
     },
     {
-      name: 'Stand Premium',
-      price: '350,000 FCFA',
-      features: ['Stand 4x4m équipé', 'Mobilier personnalisé', 'Electricité', 'Badge exposant x4', 'Logo sur communication', 'Présence VIP'],
+      name: 'Stand Personnalisé',
+      price: 'Sur devis',
+      features: ['Stand 3x2m équipé', 'Mobilier personnalisé', 'Electricité', 'Badge exposant x2', 'Logo sur communication', 'Présence VIP'],
       popular: true
     },
     {

@@ -74,7 +74,7 @@ const VisitorInfo: React.FC = () => {
     {
       icon: Baby,
       title: 'Espace famille',
-      description: 'Zone enfants avec animations et baby corner'
+      description: 'Zone enfants avec animations'
     },
     {
       icon: Wifi,

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Check, Star, Zap, Shield, Gift, Crown, Camera, Coffee, Car, Users, Sparkles, ChevronRight, X, CreditCard, Smartphone } from 'lucide-react';
+import { Star, Zap, Shield, Crown, Camera, Car, Users, ChevronRight, X, CreditCard, Smartphone } from 'lucide-react';
 import useSEO from '../Hooks/useSEO';
+//import { Check, Star, Zap, Shield, Gift, Crown, Camera, Coffee, Car, Users, Sparkles, ChevronRight, X, CreditCard, Smartphone } from 'lucide-react';
 
 interface Benefit {
   icon: React.ComponentType<{ size?: number; className?: string }>;
@@ -9,7 +10,7 @@ interface Benefit {
   value?: string;
 }
 
-interface Comparison {
+/* interface Comparison {
   feature: string;
   standard: boolean | string;
   premium: boolean | string;
@@ -21,7 +22,7 @@ interface Testimonial {
   image: string;
   quote: string;
   year: string;
-}
+} */
 
 const PremiumPass: React.FC = () => {
   const [showPaymentModal, setShowPaymentModal] = useState<boolean>(false);
@@ -38,7 +39,7 @@ const PremiumPass: React.FC = () => {
     {
       icon: Zap,
       title: 'Fast Track',
-      description: 'Entrée prioritaire sans file d\'attente. Accédez au salon 30 minutes avant le grand public.',
+      description: 'Entrée prioritaire sans file d\'attente.',
       value: 'Gain de temps'
     },
     {
@@ -47,18 +48,18 @@ const PremiumPass: React.FC = () => {
       description: 'Accès exclusif au salon climatisé avec sièges confortables, WiFi premium et rafraîchissements.',
       value: 'Confort'
     },
-    {
+/*     {
       icon: Coffee,
       title: 'Petit-Déjeuner & Cocktail',
       description: 'Petit-déjeuner d\'accueil vendredi + cocktail networking avec exposants le vendredi soir.',
       value: '2 événements'
-    },
-    {
+    }, */
+/*     {
       icon: Gift,
       title: 'Goodie Bag Premium',
       description: 'Sac cadeau exclusif rempli de produits offerts par nos exposants (valeur 50,000+ FCFA).',
       value: '50K+ FCFA'
-    },
+    }, */
     {
       icon: Users,
       title: 'Meet & Greet Créateurs',
@@ -68,7 +69,7 @@ const PremiumPass: React.FC = () => {
     {
       icon: Camera,
       title: 'Shooting Photo Pro',
-      description: 'Séance photo professionnelle de 15 min + 5 photos retouchées envoyées par email.',
+      description: 'Séance photo professionnelle de 15 min.',
       value: 'Photos HD'
     },
     {
@@ -77,12 +78,12 @@ const PremiumPass: React.FC = () => {
       description: 'Place de parking privée sécurisée à proximité immédiate de l\'entrée VIP.',
       value: 'Premium'
     },
-    {
+/*     {
       icon: Sparkles,
       title: 'Réductions Exposants',
       description: 'Carte cadeau de 10.000 FCFA valable chez +50 exposants participants pendant les 3 jours.',
       value: 'Économies'
-    },
+    }, */
     {
       icon: Shield,
       title: 'Service Conciergerie',
@@ -91,7 +92,7 @@ const PremiumPass: React.FC = () => {
     }
   ];
 
-  const comparison: Comparison[] = [
+/*   const comparison: Comparison[] = [
     { feature: 'Accès à la foire', standard: true, premium: true },
     { feature: 'Entrée prioritaire (Fast Track)', standard: false, premium: true },
     { feature: 'Accès salon VIP climatisé', standard: false, premium: true },
@@ -106,9 +107,9 @@ const PremiumPass: React.FC = () => {
     { feature: 'Accès zones enfants', standard: true, premium: true },
     { feature: 'File d\'attente ateliers', standard: 'Standard', premium: 'Prioritaire' },
     { feature: 'WiFi', standard: 'Public', premium: 'Premium dédié' }
-  ];
+  ]; */
 
-  const testimonials: Testimonial[] = [
+/*   const testimonials: Testimonial[] = [
     {
       name: 'Amina Traoré',
       title: 'Entrepreneure',
@@ -130,12 +131,12 @@ const PremiumPass: React.FC = () => {
       quote: 'Le shooting photo pro était incroyable ! Des photos parfaites pour mon Instagram. Et le goodie bag valait largement le prix du pass. Je recommande à 100% !',
       year: '2024'
     }
-  ];
+  ]; */
 
   const faqs = [
     {
       question: 'Combien coûte le Pass Premium ?',
-      answer: 'Le Pass Premium est à 25,000 FCFA pour les 3 jours (Early Bird : 20,000 FCFA jusqu\'au 30 novembre). Il donne accès à tous les avantages VIP listés ci-dessus. Places limitées à 200 passes.'
+      answer: 'Le Pass Premium est à 10,000 FCFA pour les 3 jours. Il donne accès à tous les avantages VIP listés ci-dessus. Places limitées à 200 passes.'
     },
     {
       question: 'Le Pass Premium est-il valable pour les 3 jours ?',
@@ -147,7 +148,7 @@ const PremiumPass: React.FC = () => {
     },
     {
       question: 'Comment recevoir mon Pass Premium ?',
-      answer: 'Après paiement, vous recevrez par livreur une carte. À l\'entrée, présentez votre pass et récupérez votre goodie bag.'
+      answer: 'Après paiement, vous recevrez par livreur une carte. À l\'entrée, présentez votre pass.'
     },
     {
       question: 'Les enfants ont-ils besoin d\'un Pass Premium ?',
@@ -191,14 +192,14 @@ const PremiumPass: React.FC = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
             <div className="bg-white/10 backdrop-blur-sm px-6 py-4 rounded-xl border border-white/20">
-              <div className="text-4xl font-bold text-yellow-400 mb-1">25,000 FCFA</div>
-              <div className="text-sm text-gray-300">Prix normal</div>
+              <div className="text-4xl font-bold text-yellow-400 mb-1">10,000 FCFA</div>
+              <div className="text-sm text-gray-300">Disponible</div>
             </div>
-            <div className="bg-yellow-500 text-gray-900 px-6 py-4 rounded-xl border-2 border-yellow-400">
+{/*             <div className="bg-yellow-500 text-gray-900 px-6 py-4 rounded-xl border-2 border-yellow-400">
               <div className="text-sm font-semibold mb-1">EARLY BIRD</div>
               <div className="text-4xl font-bold mb-1">20,000 FCFA</div>
               <div className="text-sm">Jusqu'au 30 novembre</div>
-            </div>
+            </div> */}
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -227,7 +228,7 @@ const PremiumPass: React.FC = () => {
             Tous vos avantages Premium
           </h2>
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-            9 avantages exclusifs pour une expérience VIP inoubliable
+            6 avantages exclusifs pour une expérience VIP inoubliable
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -252,7 +253,7 @@ const PremiumPass: React.FC = () => {
       </section>
 
       {/* Value Proposition */}
-      <section className="py-16 px-4 bg-gray-50">
+{/*       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-8 text-gray-900">
             Une valeur exceptionnelle
@@ -301,10 +302,10 @@ const PremiumPass: React.FC = () => {
             = <span className="text-green-600">75,000 FCFA d'économies</span> garanties !
           </p>
         </div>
-      </section>
+      </section> */}
 
       {/* Comparison Table */}
-      <section className="py-16 px-4">
+{/*       <section className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
             Standard vs Premium
@@ -351,10 +352,10 @@ const PremiumPass: React.FC = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Testimonials */}
-      <section className="py-16 px-4 bg-gray-50">
+{/*       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
             Ils ont adoré leur expérience VIP
@@ -383,7 +384,7 @@ const PremiumPass: React.FC = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* FAQ */}
       <section className="py-16 px-4">
@@ -426,16 +427,15 @@ const PremiumPass: React.FC = () => {
           </p>
 
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 mb-8">
-            <div className="text-sm text-gray-300 mb-2">Offre Early Bird expire le</div>
-            <div className="text-4xl font-bold text-yellow-400">30 Novembre</div>
-            <div className="text-4xl font-bold text-yellow-400">
-              <button
+{/*             <div className="text-sm text-gray-300 mb-2">Offre Early Bird expire le</div>
+            <div className="text-4xl font-bold text-yellow-400">30 Novembre</div> */}
+            <button
               onClick={() => setShowPaymentModal(true)}
               className="bg-yellow-500 hover:bg-yellow-400 text-gray-900 px-12 py-5 rounded-lg text-xl font-bold transition-all transform hover:scale-105"
-              >
-              Acheter maintenant à 20,000 FCFA
-              </button>
-            </div>
+              title="Acheter le Pass Premium VIP à 20,000 FCFA"
+            >
+              Acheter maintenant à 10,000 FCFA
+            </button>
           </div>
 
 
@@ -452,6 +452,8 @@ const PremiumPass: React.FC = () => {
             <button
               onClick={() => setShowPaymentModal(false)}
               className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+              title="Fermer la fenêtre"
+              aria-label="Fermer la fenêtre"
             >
               <X size={24} />
             </button>
@@ -463,8 +465,8 @@ const PremiumPass: React.FC = () => {
               <h3 className="text-2xl font-bold text-gray-900 mb-2">
                 Pass Premium VIP
               </h3>
-              <div className="text-4xl font-bold text-gray-900 mb-1">20,000 FCFA</div>
-              <p className="text-sm text-gray-600">Offre Early Bird</p>
+              <div className="text-4xl font-bold text-gray-900 mb-1">10,000 FCFA</div>
+              <p className="text-sm text-gray-600">Disponible</p>
             </div>
 
             <div className="space-y-4">
