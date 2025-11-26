@@ -1,6 +1,6 @@
 // pages/Exhibitors.tsx
 import React, { useState, useMemo } from 'react';
-import { Search, MapPin, Phone, Mail, ExternalLink, Instagram, Facebook, Filter, X, ChevronDown, Star, Map, Grid, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Search, MapPin, Filter, X, ChevronDown, Star, Map, Grid, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import useSEO from '../Hooks/useSEO';
 import ExhibitorMap from '../Components/Sections/ExhibitorMap';

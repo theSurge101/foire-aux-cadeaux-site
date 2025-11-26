@@ -662,14 +662,14 @@ export const exhibitorsData: Exhibitor[] = [
     standNumber: "A01",
     coordinates: { x: 15, y: 20 },
     contact: {
-      phone: "+228 96 86 54 00",
-      email: "infos@anaisconcept.biz",
-      website: "#",
+      phone: "+228 xxxxxxxx",
+      email: "",
+      website: "",
       instagram: "dels6969",
       facebook: "",
       tiktok: "",
       youtube: "",
-      whatsapp: "+22896865400"
+      whatsapp: "+228xxxxxxxx"
     },
     location: "Lomé, Togo",
     featured: true,
