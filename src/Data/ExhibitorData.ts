@@ -657,7 +657,7 @@ export const exhibitorsData: Exhibitor[] = [
     category: "accessories",
     description: "Pour ceux qui osent explorer les merveilles du corps.",
     products: ["Objets de plaisir de luxe"],
-    logo: "https://anaisconcept.biz/wp-content/uploads/2025/11/Exhibitor_Logo_Placeholder.png",
+    logo: "https://anaisconcept.biz/wp-content/uploads/2025/11/DELS-BON.png",
     photo: "https://anaisconcept.biz/wp-content/uploads/2025/11/Exhibitor_Cover_Placeholder.png",
     standNumber: "A01",
     coordinates: { x: 15, y: 20 },

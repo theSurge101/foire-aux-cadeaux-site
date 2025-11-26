@@ -45,7 +45,8 @@
     <meta property="business:contact_data:phone_number" content="+228 90 12 31 48" />
     
     <!-- Theme Colors -->
-    <meta name="theme-color" content="#111827" />
+    <!-- theme-color is not supported by some browsers (Firefox, older iOS Safari); rely on the site webmanifest for theme colors and provide an iOS status bar hint -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="msapplication-TileColor" content="#111827" />
     
     <!-- Preload Critical Resources -->
@@ -120,7 +121,7 @@
     <script type="module" src="/src/main.tsx"></script>
     
     <!-- Start of HubSpot Embed Code -->
-    <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/26251321.js"></script>
+    <script type="text/javascript" id="hs-script-loader" async defer src="https://js-eu1.hs-scripts.com/26251321.js"></script>
     <!-- End of HubSpot Embed Code -->
     
   </body>

@@ -133,7 +133,10 @@ const Exhibitors: React.FC = () => {
               />
               {searchQuery && (
                 <button
+                  type="button"
                   onClick={() => setSearchQuery('')}
+                  aria-label="Effacer la recherche"
+                  title="Effacer la recherche"
                   className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
                 >
                   <X size={20} />
@@ -291,15 +294,18 @@ const Exhibitors: React.FC = () => {
 
                   <div className="flex items-center gap-2">
                     <button
+                      type="button"
                       onClick={prevPage}
                       disabled={!hasPrevPage}
+                      aria-label="Page précédente"
+                      title="Page précédente"
                       className={`p-2 rounded-lg border ${
                         hasPrevPage
                           ? 'border-gray-300 hover:bg-gray-50 text-gray-700'
                           : 'border-gray-200 text-gray-400 cursor-not-allowed'
                       }`}
                     >
-                      <ChevronLeft size={20} />
+                      <ChevronLeft size={20} aria-hidden="true" />
                     </button>
 
                     <div className="flex gap-1">
@@ -318,6 +324,7 @@ const Exhibitors: React.FC = () => {
                         return (
                           <button
                             key={pageNum}
+                            type="button"
                             onClick={() => goToPage(pageNum)}
                             className={`w-10 h-10 rounded-lg font-medium ${
                               currentPage === pageNum
@@ -332,15 +339,18 @@ const Exhibitors: React.FC = () => {
                     </div>
 
                     <button
+                      type="button"
                       onClick={nextPage}
                       disabled={!hasNextPage}
+                      aria-label="Page suivante"
+                      title="Page suivante"
                       className={`p-2 rounded-lg border ${
                         hasNextPage
                           ? 'border-gray-300 hover:bg-gray-50 text-gray-700'
                           : 'border-gray-200 text-gray-400 cursor-not-allowed'
                       }`}
                     >
-                      <ChevronRight size={20} />
+                      <ChevronRight size={20} aria-hidden="true" />
                     </button>
                   </div>
                 </div>
