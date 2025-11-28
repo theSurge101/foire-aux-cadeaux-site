@@ -38,13 +38,13 @@ const VisitorInfo: React.FC = () => {
       icon: Calendar,
       title: 'Dates',
       description: 'Ven 19 - Dim 21 Déc. 2025',
-      details: ['3 jours de shopping', 'Plus de 150 exposants', 'Animations tous les jours']
+      details: ['3 jours de shopping', 'Plus de 100 exposants', 'Animations tous les jours']
     },
     {
       icon: Clock,
       title: 'Horaires',
       description: 'Ven-Dim: 09h-21h',
-      details: ['Ouverture VIP: 8h30', 'Happy Hours: 18h-20h', 'Fermeture dimanche: 21h']
+      details: ['Ouverture : 9h00', 'Anniversaires : 19h-20h', 'Fermeture : 21h']
     },
     {
       icon: MapPin,
@@ -74,7 +74,7 @@ const VisitorInfo: React.FC = () => {
     {
       icon: Baby,
       title: 'Espace famille',
-      description: 'Zone enfants avec animations et baby corner'
+      description: 'Zone enfants'
     },
     {
       icon: Wifi,
@@ -99,11 +99,12 @@ const VisitorInfo: React.FC = () => {
       day: 'Vendredi',
       hours: '09h00 - 21h00',
       highlights: [
-        '10h00 - Cérémonie d\'ouverture officielle',
-        '11h00 - Défilé de mode "Créateurs togolais"',
-        '14h00 - Atelier DIY: Créez vos bijoux',
-        '16h00 - Démonstration culinaire live',
-        '18h00 - Cocktail VIP & Networking'
+        '09h00 - Cérémonie d\'ouverture officielle',
+        '10h00 - Ventes et activités grand public',
+        '14h00 - Ambiance spéciale exposant/visiteurs',
+        '16h00 - Questions surprises/interviews',
+        '19h00 - Anniversaires du jour',
+        '20h00 - Cocktail VIP & Networking'
       ]
     },
     {
@@ -111,11 +112,11 @@ const VisitorInfo: React.FC = () => {
       day: 'Samedi',
       hours: '09h00 - 21h00',
       highlights: [
-        '10h00 - Ouverture grand public',
-        '11h00 - Concert live: Artistes locaux',
-        '14h00 - Démo beauté & maquillage',
-        '16h00 - Défilé enfants & famille',
-        '18h00 - Tombola avec lots à gagner'
+        '09h00 - Ouverture des ventes',
+        '11h00 - Ambiance spéciale exposant/visiteurs',
+        '16h00 - Questions surprises/interviews',
+        '19h00 - Anniversaires du jour',
+        '20h00 - Karaoke & Chilling'
       ]
     },
     {
@@ -123,12 +124,12 @@ const VisitorInfo: React.FC = () => {
       day: 'Dimanche',
       hours: '09h00 - 21h00',
       highlights: [
-        '10h00 - Brunch familial',
-        '11h00 - Spectacle pour enfants',
-        '13h00 - Démo artisanat traditionnel',
-        '15h00 - Défilé de clôture',
-        '17h00 - Annonce des gagnants tombola',
-        '18h00 - Fermeture'
+        '09h00 - Ouverture des ventes',
+        '11h00 - Ambiance spéciale exposant/visiteurs',
+        '14h00 - Noël de rêve',
+        '15h00 - Panel : "Les cadeaux dans nos traditions"',
+        '19h00 - Anniversaires du jour',
+        '20h00 - Ending Party & Remerciements'
       ]
     }
   ];
@@ -185,7 +186,7 @@ const VisitorInfo: React.FC = () => {
     },
     {
       question: 'Comment venir en transport en commun ?',
-      answer: 'Bus: Lignes X, 12, 18 (arrêt Sarakawa). Taxi: Dites "Tentes de l\'Hôtel Sarakawa". Taxi/Zémidjan: Demander accès au parking chapiteaux.'
+      answer: 'Taxi: Dites "Tentes de l\'Hôtel Sarakawa". Taxi/Zémidjan: Demander accès au parking chapiteaux.'
     },
     {
       question: 'Peut-on manger sur place ?',
@@ -197,7 +198,7 @@ const VisitorInfo: React.FC = () => {
     },
     {
       question: 'Puis-je payer par mobile money ?',
-      answer: 'Oui ! La grande majorité des exposants acceptent Flooz et TMoney. Les cartes bancaires sont également largement acceptées.'
+      answer: 'Oui ! La grande majorité des exposants acceptent Flooz et TMoney. Les cartes bancaires sont également acceptées par certains.'
     }
   ];
 
@@ -273,7 +274,7 @@ const VisitorInfo: React.FC = () => {
           <h2 className="text-3xl font-bold text-center mb-4 text-gray-900">
             Qu'allez-vous trouver ?
           </h2>
-          <p className="text-center text-gray-600 mb-12">Plus de 150 exposants dans 6 univers</p>
+          <p className="text-center text-gray-600 mb-12">Plus de 100 exposants dans 6 univers</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {categories.map((category, index) => (
               <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
