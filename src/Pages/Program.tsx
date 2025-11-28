@@ -215,12 +215,12 @@ const Program: React.FC = () => {
   const highlights = [
     {
       icon: Music,
-      title: '15+ Spectacles Live',
-      description: 'Concerts, défilés et performances'
+      title: 'Spectacles Live',
+      description: 'Animations, défilés et performances'
     },
     {
       icon: Palette,
-      title: '10 Ateliers DIY',
+      title: 'Ateliers DIY',
       description: 'Créez, apprenez et repartez avec vos œuvres'
     },
     {
@@ -231,7 +231,7 @@ const Program: React.FC = () => {
     {
       icon: Trophy,
       title: 'Concours & Tombola',
-      description: '+500,000 FCFA de lots à gagner'
+      description: 'Pléthore de lots à gagner'
     }
   ];
 
@@ -448,7 +448,7 @@ const Program: React.FC = () => {
                   </li>
                   <li className="flex gap-2">
                     <span>•</span>
-                    <span>Pour la tombola, les tickets sont en vente auprès des exposants (1000 FCFA)</span>
+                    <span>Pour les jeux et surprises, se rapprocher des MCs</span>
                   </li>
                   <li className="flex gap-2">
                     <span>•</span>
