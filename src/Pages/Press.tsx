@@ -119,10 +119,10 @@ const MEDIA_ASSETS: MediaAsset[] = [
   {
     type: 'photo',
     title: 'Photos Édition 2024',
-    description: 'Album de 50 photos HD : foule, exposants, stands, ambiance',
+    description: 'Album de photos HD : foule, exposants, stands, ambiance',
     format: 'JPG HD',
-    size: '250 MB',
-    downloadLink: '/press/photos-2024.zip',
+    size: '13 MB',
+    downloadLink: 'https://26251321.fs1.hubspotusercontent-eu1.net/hubfs/26251321/FAC/FAC11/FAC2024_PRESS_V2.zip',
     previewUrl: 'https://anaisconcept.biz/wp-content/uploads/2025/09/DSC_9801-scaled.jpg?w=300&h=150&fit=crop'
   }
 ];
@@ -202,7 +202,8 @@ const PressReleasesSection: React.FC = () => (
                 </div>
                 <a
                   href={release.link}
-                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex-shrink-0 bg-gray-900 hover:bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold transition-all flex items-center gap-2"
                 >
                   <Download size={18} />
@@ -255,7 +256,8 @@ const MediaAssetsSection: React.FC = () => (
                 </div>
                 <a
                   href={asset.downloadLink}
-                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full bg-gray-900 hover:bg-gray-800 text-white py-3 rounded-lg font-semibold transition-all flex items-center justify-center gap-2"
                 >
                   <Download size={18} />
@@ -409,6 +411,7 @@ const AccreditationSection: React.FC = () => {
               <select
                 value={form.role}
                 onChange={(e) => updateField('role', e.target.value)}
+                aria-label="Fonction"
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-gray-900 focus:outline-none"
                 required
               >
@@ -526,7 +529,8 @@ const Press: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/press/dossier-presse-2025.pdf"
-              download
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-white text-gray-900 hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold transition-all flex items-center gap-2 justify-center"
             >
               <Download size={20} />
