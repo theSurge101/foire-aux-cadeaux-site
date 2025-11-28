@@ -49,88 +49,56 @@ const Program: React.FC = () => {
       fullDate: 'Vendredi 19 Décembre 2025',
       activities: [
         {
-          time: '09:30',
-          title: 'Accueil Pass Premium',
-          description: 'Ouverture anticipée réservée aux détenteurs du Pass Premium avec petit-déjeuner de bienvenue',
-          location: 'Entrée VIP',
+          time: '09:00',
+          title: 'Cérémonie d\'ouverture officielle',
+          description: 'Discours des autorités, ruban inaugural et ouverture au grand public. Présence des médias nationaux.',
+          location: 'Scène Principale',
           category: 'vip',
           icon: Star
         },
         {
           time: '10:00',
-          title: 'Cérémonie d\'Ouverture Officielle',
-          description: 'Discours des autorités, ruban inaugural et ouverture au grand public. Présence des médias nationaux.',
-          location: 'Scène Principale',
-          category: 'show',
-          icon: Users,
+          title: 'Ventes et activités grand public',
+          description: 'Ouverture de tous les stands et début des ventes. Découverte des exposants et premières animations. Présence des médias nationaux.',
+          location: 'Tout le salon',
+          category: 'demo',
+          icon: Sparkles,
           isFeatured: true
-        },
-        {
-          time: '11:00',
-          title: 'Défilé de Mode "Créateurs Togolais"',
-          description: 'Découvrez les créations des meilleurs designers togolais : prêt-à-porter, robes de soirée, et fusion tradition-modernité',
-          location: 'Scène Principale',
-          category: 'show',
-          icon: Music,
-          isFeatured: true
-        },
-        {
-          time: '12:30',
-          title: 'Atelier DIY : Créez vos Bijoux',
-          description: 'Apprenez à fabriquer vos propres bracelets et colliers avec nos artisans. Matériel fourni. Places limitées (20 personnes)',
-          location: 'Espace Ateliers',
-          category: 'workshop',
-          icon: Palette
         },
         {
           time: '14:00',
-          title: 'Démonstration Culinaire Live',
-          description: 'Chef Kofi prépare des recettes fusion : cuisine togolaise revisitée. Dégustation gratuite pour les 50 premiers.',
-          location: 'Food Court',
+          title: 'Ambiance spéciale exposant/visiteurs',
+          description: 'Animations surprises dans les allées, rencontres privilégiées avec les exposants et démonstrations live.',
+          location: 'Tout le salon',
           category: 'demo',
-          icon: Utensils,
+          icon: Sparkles,
           isFeatured: true
         },
         {
-          time: '15:00',
-          title: 'Atelier Enfants : Peinture sur Tissu',
-          description: 'Les enfants (5-12 ans) créent leur propre t-shirt personnalisé. Gratuit avec supervision. Inscription sur place.',
-          location: 'Espace Famille',
-          category: 'kids',
-          icon: Baby
-        },
-        {
           time: '16:00',
-          title: 'Concours de Stylisme Amateur',
-          description: 'Inscriptions ouvertes ! Présentez votre look le plus original. Prix : 100,000 FCFA + shooting photo professionnel',
-          location: 'Scène Principale',
+          title: 'Questions surprises/interviews',
+          description: 'Micro-trottoir et interviews spontanées avec visiteurs et exposants. Lots à gagner pour les participants !',
+          location: 'Allées principales',
           category: 'contest',
           icon: Trophy
         },
         {
-          time: '17:00',
-          title: 'Concert Live : Artiste Surprise',
-          description: 'Performance live d\'un artiste togolais reconnu. Ambiance garantie pour lancer le weekend !',
+          time: '19:00',
+          title: 'Anniversaires du jour',
+          description: 'Célébration des anniversaires des visiteurs nés un 19 décembre. Gâteau géant et cadeaux surprises !',
           location: 'Scène Principale',
           category: 'show',
           icon: Music,
           isFeatured: true
         },
         {
-          time: '18:00',
+          time: '20:00',
           title: 'Cocktail VIP & Networking',
-          description: 'Réservé aux Pass Premium : rencontre avec exposants, influenceurs et entrepreneurs. Champagne et canapés offerts.',
-          location: 'Salon VIP',
+          description: 'Rencontre avec exposants, influenceurs et entrepreneurs.',
+          location: 'Scène Principale',
           category: 'vip',
-          icon: Star
-        },
-        {
-          time: '19:00',
-          title: 'Démonstration Beauté : Maquillage de Soirée',
-          description: 'Make-up artist professionnelle dévoile ses techniques. Conseils personnalisés et mini relooking gratuit.',
-          location: 'Stand Beauté',
-          category: 'demo',
-          icon: Sparkles
+          icon: Star,
+          isFeatured: true
         }
       ]
     },
@@ -140,97 +108,46 @@ const Program: React.FC = () => {
       fullDate: 'Samedi 20 Décembre 2025',
       activities: [
         {
-          time: '10:00',
-          title: 'Ouverture & Animations de Rue',
-          description: 'Échassiers, musiciens et danseurs pour une entrée en fanfare ! Ambiance festive dès l\'ouverture.',
-          location: 'Entrée Principale',
-          category: 'show',
-          icon: Music
+          time: '09:00',
+          title: 'Ouverture des ventes',
+          description: 'Deuxième jour de shopping avec nouvelles arrivées et promotions exclusives du weekend',
+          location: 'Tout le salon',
+          category: 'demo',
+          icon: Sparkles
         },
         {
           time: '11:00',
-          title: 'Concert Live : Groupe Afrobeat',
-          description: 'Concert énergique avec le meilleur groupe afrobeat du moment. Préparez-vous à danser !',
-          location: 'Scène Principale',
-          category: 'show',
-          icon: Music,
-          isFeatured: true
-        },
-        {
-          time: '12:00',
-          title: 'Atelier DIY : Fabrication de Savons Naturels',
-          description: 'Créez vos propres savons artisanaux avec des ingrédients 100% naturels. Repartez avec vos créations !',
-          location: 'Espace Ateliers',
-          category: 'workshop',
-          icon: Palette
-        },
-        {
-          time: '13:00',
-          title: 'Concours Photo Instagram',
-          description: 'Postez votre plus belle photo de la foire avec #FoireCadeaux2025. À gagner : Pass VIP 2026 + panier cadeau 200,000 FCFA',
+          title: 'Ambiance spéciale exposant/visiteurs',
+          description: 'Nouvelle série d\'animations et rencontres exclusives. Dégustations et démonstrations renforcées.',
           location: 'Tout le salon',
-          category: 'contest',
-          icon: Trophy
-        },
-        {
-          time: '14:00',
-          title: 'Démonstration Coiffure Afro',
-          description: 'Tresses, vanilles, locks : découvrez les techniques et tendances coiffure afro avec des professionnelles.',
-          location: 'Stand Beauté',
           category: 'demo',
           icon: Sparkles,
           isFeatured: true
         },
         {
-          time: '14:30',
-          title: 'Spectacle pour Enfants : Conte Musical',
-          description: 'Conte traditionnel togolais mis en musique et en scène. Magique pour les 3-10 ans. Durée : 45 minutes.',
-          location: 'Espace Famille',
-          category: 'kids',
-          icon: Baby,
-          isFeatured: true
-        },
-        {
-          time: '15:30',
-          title: 'Atelier Dégustation : Chocolats & Cafés d\'Afrique',
-          description: 'Découverte guidée des meilleurs chocolats et cafés africains. Notes de dégustation offertes. Limité à 30 personnes.',
-          location: 'Food Court',
-          category: 'food',
-          icon: Utensils
-        },
-        {
           time: '16:00',
-          title: 'Grand Défilé Famille & Enfants',
-          description: 'Défilé de mode parent-enfant avec les collections des créateurs. Inscriptions enfants sur place (gratuit).',
-          location: 'Scène Principale',
-          category: 'show',
-          icon: Heart,
-          isFeatured: true
-        },
-        {
-          time: '17:00',
-          title: 'Atelier DIY : Customisation de Sacs',
-          description: 'Personnalisez votre tote bag avec peinture textile, strass et patchs. Matériel fourni, amenez votre créativité !',
-          location: 'Espace Ateliers',
-          category: 'workshop',
-          icon: Palette
-        },
-        {
-          time: '18:00',
-          title: 'Grande Tombola - Tirage 1',
-          description: 'Premier tirage avec de superbes lots : smartphones, bons d\'achat, produits exposants. Tickets en vente toute la journée.',
-          location: 'Scène Principale',
+          title: 'Questions surprises/interviews',
+          description: 'Deuxième session d\'interactions spontanées avec encore plus de lots et de surprises pour les participants.',
+          location: 'Allées principales',
           category: 'contest',
-          icon: Trophy,
-          isFeatured: true
+          icon: Trophy
         },
         {
           time: '19:00',
-          title: 'DJ Set & Fin de Soirée',
-          description: 'Ambiance club avec DJ résident. Dernière heure de shopping en musique avant fermeture !',
+          title: 'Anniversaires du jour',
+          description: 'Fête des visiteurs nés un 20 décembre. Animation musicale et distribution de gadeau.',
           location: 'Scène Principale',
           category: 'show',
           icon: Music
+        },
+        {
+          time: '20:00',
+          title: 'Karaoke & Chilling',
+          description: 'Session karaoké géante pour clôturer la journée dans la bonne humeur. Ambiance détente et conviviale.',
+          location: 'Scène Principale',
+          category: 'show',
+          icon: Music,
+          isFeatured: true
         }
       ]
     },
@@ -240,88 +157,56 @@ const Program: React.FC = () => {
       fullDate: 'Dimanche 21 Décembre 2025',
       activities: [
         {
-          time: '10:00',
-          title: 'Brunch Familial',
-          description: 'Commencez la journée avec un brunch au Food Court. Menu spécial famille à prix doux. Jus frais et viennoiseries.',
-          location: 'Food Court',
-          category: 'food',
-          icon: Utensils
+          time: '09:00',
+          title: 'Ouverture des ventes',
+          description: 'Dernier jour pour profiter des opportunités de fin d\'événement et des promotions exclusives.',
+          location: 'Tout le salon',
+          category: 'demo',
+          icon: Sparkles
         },
         {
           time: '11:00',
-          title: 'Spectacle Magie & Marionnettes',
-          description: 'Spectacle interactif pour toute la famille. Le magicien Kokou émerveille petits et grands. Durée : 1h.',
-          location: 'Espace Famille',
-          category: 'kids',
-          icon: Baby,
-          isFeatured: true
-        },
-        {
-          time: '12:00',
-          title: 'Atelier DIY : Création de Bougie Parfumée',
-          description: 'Fabriquez votre bougie artisanale avec parfums et colorants naturels. Parfait cadeau à offrir !',
-          location: 'Espace Ateliers',
-          category: 'workshop',
-          icon: Palette
-        },
-        {
-          time: '13:00',
-          title: 'Démonstration Artisanat Traditionnel',
-          description: 'Poterie, tissage, sculpture : maîtres artisans montrent les techniques ancestrales togolaises. Questions-réponses.',
-          location: 'Zone Artisanat',
+          title: 'Ambiance spéciale exposant/visiteurs',
+          description: 'Dernières animations et rencontres privilégiées. Moment d\'échanges et de partage avant la clôture.',
+          location: 'Tout le salon',
           category: 'demo',
           icon: Sparkles,
           isFeatured: true
         },
         {
           time: '14:00',
-          title: 'Concours du Meilleur Exposant (Vote Public)',
-          description: 'Votez pour votre stand préféré ! Catégories : Meilleur produit, Stand le plus créatif, Meilleur accueil.',
-          location: 'Tout le salon',
-          category: 'contest',
-          icon: Trophy
-        },
-        {
-          time: '14:30',
-          title: 'Atelier Cuisine : Pâtisserie pour Enfants',
-          description: 'Les enfants préparent leurs propres cupcakes avec décoration. Tablier fourni. Dégustation sur place !',
-          location: 'Food Court',
+          title: 'Noël de rêve',
+          description: 'Ambiance festive de Noël, pour enfants, avec décoration spéciale, musique de fête et distribution de surprises.',
+          location: 'Scène Principale',
           category: 'kids',
-          icon: Utensils
+          icon: Baby,
+          isFeatured: true
         },
         {
           time: '15:00',
-          title: 'Grand Défilé de Clôture',
-          description: 'Défilé final rassemblant tous les créateurs de mode présents. Apothéose fashion de ces 3 jours !',
+          title: 'Togbuiga ADELA AKLASSOU IV, chef Canton de Bè : "Les cadeaux dans nos traditions"',
+          description: 'Table ronde avec des experts sur la signification des cadeaux dans les cultures africaines. Échanges avec le public.',
+          location: 'Scène Principale',
+          category: 'workshop',
+          icon: Palette,
+          isFeatured: true
+        },
+        {
+          time: '19:00',
+          title: 'Anniversaires du jour',
+          description: 'Dernière célébration des anniversaires pour les nés un 21 décembre.',
+          location: 'Scène Principale',
+          category: 'show',
+          icon: Music
+        },
+        {
+          time: '20:00',
+          title: 'Ending Party & Remerciements',
+          description: 'Cérémonie de clôture officielle, remerciements aux exposants et visiteurs, et annonce des projets futurs.',
           location: 'Scène Principale',
           category: 'show',
           icon: Music,
           isFeatured: true
-        },
-        {
-          time: '16:00',
-          title: 'Session VIP : Meet & Greet Créateurs',
-          description: 'Rencontrez en privé vos créateurs préférés. Photos, dédicaces et discussions. Réservé Pass Premium.',
-          location: 'Salon VIP',
-          category: 'vip',
-          icon: Star
-        },
-        {
-          time: '17:00',
-          title: 'Grande Tombola - Tirage Final',
-          description: 'Tirage du GRAND LOT : Voyage pour 2 personnes + bons d\'achat 500,000 FCFA. Présence obligatoire pour gagner !',
-          location: 'Scène Principale',
-          category: 'contest',
-          icon: Trophy,
-          isFeatured: true
-        },
-        {
-          time: '17:30',
-          title: 'Cérémonie de Clôture & Remerciements',
-          description: 'Discours de clôture, annonce des gagnants des concours, et rendez-vous pour l\'édition 2026 !',
-          location: 'Scène Principale',
-          category: 'show',
-          icon: Users
         }
       ]
     }
