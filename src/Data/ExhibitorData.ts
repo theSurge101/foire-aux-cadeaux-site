@@ -94,8 +94,8 @@ export const exhibitorsData: Exhibitor[] = [
     category: "fashion",
     description: "Nous sommes spécialisés dans la création des vêtements et Accessoires (sacs, chaussures, boucles) en tissus africains (pagne wax, pagne tissé, Bogolan etc..) avec de belles finitions.",
     products: ["Vêtements en tissus africains", "Sacs", "Chaussures", "Boucles d'oreilles", "Pagne wax", "Bogolan"],
-    logo: "https://anaisconcept.biz/wp-content/uploads/2025/11/Exhibitor_Logo_Placeholder.png",
-    photo: "https://anaisconcept.biz/wp-content/uploads/2025/11/Exhibitor_Cover_Placeholder.png",
+    logo: "https://anaisconcept.biz/wp-content/uploads/2025/11/PEARL-RARE.jpg",
+    photo: "https://anaisconcept.biz/wp-content/uploads/2025/12/Photo-Pearlrare-3.jpg",
     standNumber: "A03",
     coordinates: { x: 25, y: 30 },
     contact: {
@@ -116,7 +116,7 @@ export const exhibitorsData: Exhibitor[] = [
     description: "A Késsinonu Designs nous créons des accessoires à partir de perles en verres recyclés produits au Togo.",
     products: ["Bijoux en perles recyclées", "Accessoires", "Perles en verre"],
     logo: "https://anaisconcept.biz/wp-content/uploads/2025/11/KESSINONOU-DESIGN.jpg",
-    photo: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400&h=300&fit=crop",
+    photo: "https://anaisconcept.biz/wp-content/uploads/2025/12/image3.jpeg",
     standNumber: "A04",
     coordinates: { x: 30, y: 35 },
     contact: {
@@ -137,7 +137,7 @@ export const exhibitorsData: Exhibitor[] = [
     description: "Vente d'épices en poudre pour faciliter la cuisine sainement et avec du goût.",
     products: ["Épices en poudre", "Condiments", "Mélanges d'épices"],
     logo: "https://anaisconcept.biz/wp-content/uploads/2025/11/OSPICES-COPYRIGTH.png",
-    photo: "https://anaisconcept.biz/wp-content/uploads/2025/11/Exhibitor_Cover_Placeholder.png",
+    photo: "https://anaisconcept.biz/wp-content/uploads/2025/12/OSpice.jpeg",
     standNumber: "B01",
     coordinates: { x: 35, y: 40 },
     contact: {
@@ -157,7 +157,7 @@ export const exhibitorsData: Exhibitor[] = [
     description: "Nous aidons les gens à afficher leur bien-être au quotidien à travers élégantes tenues en bazin.",
     products: ["Tenues en bazin", "Mode africaine", "Vêtements élégants"],
     logo: "https://anaisconcept.biz/wp-content/uploads/2025/11/MAGNIFIQ.png",
-    photo: "https://anaisconcept.biz/wp-content/uploads/2025/11/Exhibitor_Cover_Placeholder.png",
+    photo: "https://anaisconcept.biz/wp-content/uploads/2025/12/MagnifiQ.jpeg",
     standNumber: "B02",
     coordinates: { x: 40, y: 45 },
     contact: {
@@ -199,7 +199,7 @@ export const exhibitorsData: Exhibitor[] = [
     description: "Prestations de services événementiel en barbecue et grill. Viandes: boeuf, agneau, porc, des saucisses locales (merguez, saucisses de boeuf, Toulouse, Francfort, boudin blanc...etc) et poissons (selon le désir du client).",
     products: ["Barbecue", "Grill", "Viandes", "Poissons", "Saucisses", "Traiteur événementiel"],
     logo: "https://anaisconcept.biz/wp-content/uploads/2025/11/Moricanho_s_Grill.png",
-    photo: "https://anaisconcept.biz/wp-content/uploads/2025/11/Exhibitor_Cover_Placeholder.png",
+    photo: "https://anaisconcept.biz/wp-content/uploads/2025/12/MoricanoSGrill.jpeg",
     standNumber: "B04",
     coordinates: { x: 50, y: 55 },
     contact: {
@@ -220,7 +220,7 @@ export const exhibitorsData: Exhibitor[] = [
     description: "DIVINE OPTIQUE est un cabinet d'optique spécialisé dans la vente, la réparation, l'entretien des lunettes médicales, Solaires et accessoires. Située au rond-point Tokoin-Cassablanca en face de la Station CAP avec 04 agences annexes dans les quartiers TOTSI, AGOE, NOVISSI, BAGUIDA.",
     products: ["Lunettes médicales", "Lunettes solaires", "Réparation lunettes", "Accessoires optique"],
     logo: "https://anaisconcept.biz/wp-content/uploads/2025/11/DIVINE-OPTIQUE.png",
-    photo: "https://anaisconcept.biz/wp-content/uploads/2025/11/Exhibitor_Cover_Placeholder.png",
+    photo: "https://anaisconcept.biz/wp-content/uploads/2025/12/Divine_Optique.png",
     standNumber: "C01",
     coordinates: { x: 55, y: 60 },
     contact: {
@@ -241,7 +241,7 @@ export const exhibitorsData: Exhibitor[] = [
     description: "Nous sommes spécialisés dans la décoration d'intérieur et l'aménagement sur mesure. Que ce soit pour des résidences privées, des espaces commerciaux ou des bureaux. Nous vendons des articles de décoration et d'ameublement.",
     products: ["Décoration intérieure", "Aménagement sur mesure", "Articles de décoration", "Ameublement"],
     logo: "https://anaisconcept.biz/wp-content/uploads/2025/11/LYDDANE.jpg",
-    photo: "https://anaisconcept.biz/wp-content/uploads/2025/11/Exhibitor_Cover_Placeholder.png",
+    photo: "https://anaisconcept.biz/wp-content/uploads/2025/12/Lyddane.jpeg",
     standNumber: "C02",
     coordinates: { x: 60, y: 65 },
     contact: {
@@ -324,7 +324,7 @@ export const exhibitorsData: Exhibitor[] = [
     description: "Bewaxclothing est une marque de mode contemporaine qui célèbre le patrimoine textile du continent africain. Elle crée des vêtements haut de gamme confectionnés à partir de tissus traditionnels kente, batik, tye dye, bogolan, ou raphia en les réinterprétant avec des coupes modernes et un design épuré.",
     products: ["Mode contemporaine", "Tissus africains", "Kente", "Batik", "Bogolan", "Raphia"],
     logo: "https://anaisconcept.biz/wp-content/uploads/2025/11/EKAA.png",
-    photo: "https://anaisconcept.biz/wp-content/uploads/2025/11/Exhibitor_Cover_Placeholder.png",
+    photo: "https://anaisconcept.biz/wp-content/uploads/2025/12/Ekaa.jpg",
     standNumber: "D02",
     coordinates: { x: 20, y: 85 },
     contact: {
@@ -366,7 +366,7 @@ export const exhibitorsData: Exhibitor[] = [
     description: "Notre salon de soins et de beauté (Efia's GARDEN) offre un espace chaleureux dédié à votre bien-être. Soins du visage et du corps, massages, manucure, épilation, massage, maquillage etc.: nos professionnels mettent leur expertise au service de votre beauté pour une expérience de détente complète.",
     products: ["Soins du visage", "Soins du corps", "Massages", "Manucure", "Épilation", "Maquillage"],
     logo: "https://anaisconcept.biz/wp-content/uploads/2025/11/EFIA_S-GARDEN.jpg",
-    photo: "https://anaisconcept.biz/wp-content/uploads/2025/11/Exhibitor_Cover_Placeholder.png",
+    photo: "https://anaisconcept.biz/wp-content/uploads/2025/12/EfiasGarden.jpeg",
     standNumber: "E01",
     coordinates: { x: 30, y: 20 },
     contact: {
@@ -387,7 +387,7 @@ export const exhibitorsData: Exhibitor[] = [
     description: "L'escale Africaine est un concept créé en 2023 par un couple franco-togolais (Nicole & Olivier) avec la transformation de produits locaux (Chips et jus), une épicerie fine, un restaurant à Nukafu au sein du complexe hôtelier Africo Palace, un service de livraison de repas pour les particuliers ou les entreprises avec notre propre équipe de livreurs ou via l'application GOZEM (meilleure note avec 4,5), une activité de traiteur d'évènements pour les particuliers et pour les entreprises, la restauration collective pour les écoles et les entreprises (300 repas par jour).",
     products: ["Restaurant", "Traiteur", "Chips", "Jus", "Épicerie fine", "Livraison repas", "Restauration collective"],
     logo: "https://anaisconcept.biz/wp-content/uploads/2025/11/L_ESCALE-AFRICAINE.jpg",
-    photo: "https://anaisconcept.biz/wp-content/uploads/2025/11/Exhibitor_Cover_Placeholder.png",
+    photo: "https://anaisconcept.biz/wp-content/uploads/2025/12/EscaleAfricaine-e1764550172232.jpeg",
     standNumber: "E02",
     coordinates: { x: 35, y: 25 },
     contact: {
@@ -448,7 +448,7 @@ export const exhibitorsData: Exhibitor[] = [
     description: "Création de bijoux en perles et pierres fines.",
     products: ["Bijoux en perles", "Pierres fines", "Accessoires"],
     logo: "https://anaisconcept.biz/wp-content/uploads/2025/11/Exhibitor_Logo_Placeholder.png",
-    photo: "https://anaisconcept.biz/wp-content/uploads/2025/11/Exhibitor_Cover_Placeholder.png",
+    photo: "https://anaisconcept.biz/wp-content/uploads/2025/12/IleIleke-e1764550400545.jpeg",
     standNumber: "F01",
     coordinates: { x: 50, y: 40 },
     contact: {
@@ -469,7 +469,7 @@ export const exhibitorsData: Exhibitor[] = [
     description: "Commercialisation de crèmes glacées, de biscuits et de bonbons.",
     products: ["Crèmes glacées", "Biscuits", "Bonbons", "Confiseries"],
     logo: "https://anaisconcept.biz/wp-content/uploads/2025/11/NJINGA-PALACE.jpg",
-    photo: "https://anaisconcept.biz/wp-content/uploads/2025/11/Exhibitor_Cover_Placeholder.png",
+    photo: "https://anaisconcept.biz/wp-content/uploads/2025/12/NjingaPalace.jpeg",
     standNumber: "F02",
     coordinates: { x: 55, y: 45 },
     contact: {
@@ -509,8 +509,8 @@ export const exhibitorsData: Exhibitor[] = [
     category: "food",
     description: "Transformation du piment sous diverses formes pour la consommation et vente de friandises faites à base de bananes plantains.",
     products: ["Piment transformé", "Friandises bananes plantains", "Condiments"],
-    logo: "https://anaisconcept.biz/wp-content/uploads/2025/11/Exhibitor_Logo_Placeholder.png",
-    photo: "https://anaisconcept.biz/wp-content/uploads/2025/11/Exhibitor_Cover_Placeholder.png",
+    logo: "https://anaisconcept.biz/wp-content/uploads/2025/11/YEBESSEVI.png",
+    photo: "https://anaisconcept.biz/wp-content/uploads/2025/12/Yebessevi.jpeg",
     standNumber: "F04",
     coordinates: { x: 65, y: 55 },
     contact: {
@@ -530,7 +530,7 @@ export const exhibitorsData: Exhibitor[] = [
     description: "Elle est spécialisée dans la vente des pagnes woodin, GTP, UNIWAX, des Bijoux & Accessoires.",
     products: ["Pagnes Woodin", "GTP", "UNIWAX", "Bijoux", "Accessoires"],
     logo: "https://anaisconcept.biz/wp-content/uploads/2025/11/ATA-BERRACA.jpg",
-    photo: "https://anaisconcept.biz/wp-content/uploads/2025/11/Exhibitor_Cover_Placeholder.png",
+    photo: "https://anaisconcept.biz/wp-content/uploads/2025/12/AtaBerraca.jpeg",
     standNumber: "G01",
     coordinates: { x: 70, y: 60 },
     contact: {
@@ -550,7 +550,7 @@ export const exhibitorsData: Exhibitor[] = [
     description: "Elga Garden est une entreprise spécialisée dans la production de glaces artisanales locales à base d'ingrédients naturels, la conception de systèmes de pisciculture urbaine innovants et l'accompagnement à la création de potagers écologiques.",
     products: ["Glaces artisanales", "Pisciculture urbaine", "Potagers écologiques", "Aquaponie"],
     logo: "https://anaisconcept.biz/wp-content/uploads/2025/11/Elga_Garden.png",
-    photo: "https://anaisconcept.biz/wp-content/uploads/2025/11/Exhibitor_Cover_Placeholder.png",
+    photo: "https://anaisconcept.biz/wp-content/uploads/2025/12/ElgaGarden.jpeg",
     standNumber: "G02",
     coordinates: { x: 75, y: 65 },
     contact: {
@@ -591,7 +591,7 @@ export const exhibitorsData: Exhibitor[] = [
   description: "Décoration et design d'intérieur/vente de plantes décoratives.",
   products: ["Décoration intérieure", "Design d'intérieur", "Plantes décoratives"],
     logo: "https://anaisconcept.biz/wp-content/uploads/2025/11/MR-SHINE.jpg",
-    photo: "https://anaisconcept.biz/wp-content/uploads/2025/11/Exhibitor_Cover_Placeholder.png",
+    photo: "https://anaisconcept.biz/wp-content/uploads/2025/12/MrShine.jpeg",
   standNumber: "G04",
   coordinates: { x: 15, y: 75 },
   contact: {
@@ -610,8 +610,8 @@ export const exhibitorsData: Exhibitor[] = [
     category: "accessories",
     description: "SAMBA Design, est une structure spécialisée dans les idées cadeaux personnalisés pour particuliers et entreprises. Chez nous, chaque occasion mérite un cadeau ou un souvenir unique, raffiné et inoubliable. Nous apportons une touche spéciale et originale à toutes vos célébrations. Chez SAMBA Design, votre satisfaction, notre unique priorité 🤗",
     products: ["Cadeaux personnalisés", "Souvenirs", "Articles personnalisés", "Cadeaux d'entreprise"],
-    logo: "https://anaisconcept.biz/wp-content/uploads/2025/11/Exhibitor_Logo_Placeholder.png",
-    photo: "https://anaisconcept.biz/wp-content/uploads/2025/11/Exhibitor_Cover_Placeholder.png",
+    logo: "https://anaisconcept.biz/wp-content/uploads/2025/11/SAMBA-DESIGN.png",
+    photo: "https://anaisconcept.biz/wp-content/uploads/2025/12/SambaDesign.jpg",
     standNumber: "G05",
     coordinates: { x: 20, y: 80 },
     contact: {
@@ -632,7 +632,7 @@ export const exhibitorsData: Exhibitor[] = [
     description: "Belham Beauty crée des soins capillaires naturels et innovants, alliant ingrédients africains et actifs modernes, pour sublimer les cheveux texturés, redonner confiance aux femmes, tout en ayant un impact social.",
     products: ["Soins capillaires naturels", "Produits pour cheveux texturés", "Cosmétiques africains"],
     logo: "https://anaisconcept.biz/wp-content/uploads/2025/11/Exhibitor_Logo_Placeholder.png",
-    photo: "https://anaisconcept.biz/wp-content/uploads/2025/11/Exhibitor_Cover_Placeholder.png",
+    photo: "https://anaisconcept.biz/wp-content/uploads/2025/12/Belham.jpg",
     standNumber: "A01",
     coordinates: { x: 15, y: 20 },
     contact: {
