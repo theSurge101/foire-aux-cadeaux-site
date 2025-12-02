@@ -87,7 +87,7 @@ const Exhibitors: React.FC = () => {
       <section className="py-16 px-4 bg-gradient-to-br from-gray-50 to-gray-100">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 text-center">
-            Nos Exposants 2025
+            Découvrez les exposants présents
           </h1>
           <p className="text-xl text-gray-600 text-center mb-8 max-w-3xl mx-auto">
             Découvrez les {exhibitorsData.length}+ exposants présents : artisans, créateurs et marques lifestyle 
