@@ -27,7 +27,7 @@ const Program: React.FC = () => {
     title: "Programme Complet - La Foire Aux Cadeaux 2025 | 19-21 Décembre",
     description: "Découvrez le programme détaillé des 3 jours : défilés de mode, concerts, ateliers DIY, démonstrations culinaires, animations enfants et bien plus encore !",
     url: "https://foireauxcadeaux.anaisconcept.biz/programme",
-    image: "https://foireauxcadeaux.anaisconcept.biz/og-program.jpg",
+    image: "https://anaisconcept.biz/wp-content/uploads/2025/12/Femi-1920x1080px-Horizontal.jpg",
     keywords: "programme foire cadeaux, animations lomé, ateliers togo, spectacles événement, défilés mode lomé"
   });
 

@@ -18,7 +18,7 @@ const Exhibitors: React.FC = () => {
     title: "Liste des Exposants - La Foire Aux Cadeaux 2025 | 150+ Marques",
     description: "Découvrez les +150 exposants présents : artisans, créateurs, marques lifestyle. Mode, décoration, bijoux, gastronomie et plus encore à Lomé.",
     url: "https://foireauxcadeaux.anaisconcept.biz/liste-exposants",
-    image: "https://foireauxcadeaux.anaisconcept.biz/og-exhibitors-list.jpg",
+    image: "https://anaisconcept.biz/wp-content/uploads/2025/12/Femi-1920x1080px-Horizontal.jpg",
     keywords: "exposants lomé, artisans togo, créateurs locaux, marques togolaises, liste exposants foire"
   });
 

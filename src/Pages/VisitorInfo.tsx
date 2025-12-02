@@ -29,7 +29,7 @@ const VisitorInfo: React.FC = () => {
     title: "Informations Visiteurs - La Foire Aux Cadeaux 2025 | Lomé",
     description: "Tout ce qu'il faut savoir pour visiter la foire : horaires, tarifs, accès, programme. Planifiez votre visite au plus grand salon lifestyle du Togo.",
     url: "https://foireauxcadeaux.anaisconcept.biz/visiteurs",
-    image: "https://foireauxcadeaux.anaisconcept.biz/og-visitors.jpg",
+    image: "https://anaisconcept.biz/wp-content/uploads/2025/12/Femi-1920x1080px-Horizontal.jpg",
     keywords: "visiter foire lomé, horaires foire cadeaux, tarifs entrée lomé, programme événement togo"
   });
 
