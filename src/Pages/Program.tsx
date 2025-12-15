@@ -133,6 +133,14 @@ const Program: React.FC = () => {
           icon: Trophy
         },
         {
+          time: '17:00',
+          title: 'Le Show des exposants',
+          description: 'Interactions et activations commerciales pour les exposants.',
+          location: 'Allées principales',
+          category: 'contest',
+          icon: Trophy
+        },
+        {
           time: '19:00',
           title: 'Anniversaires du jour',
           description: 'Fête des visiteurs nés un 20 décembre. Animation musicale et distribution de gadeau.',
@@ -190,6 +198,14 @@ const Program: React.FC = () => {
           category: 'workshop',
           icon: Palette,
           isFeatured: true
+        },
+        {
+          time: '17:00',
+          title: 'Chants et danses du terroir',
+          description: 'Animations et performances culturelles pour les participants.',
+          location: 'Scène Principale',
+          category: 'show',
+          icon: Trophy
         },
         {
           time: '19:00',
