@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
-import { Calendar, MapPin, Clock, Ticket, Car, Bus, Utensils, Baby, Wifi, Camera, Shield, Gift, ShoppingBag, Heart, Users, Music, ChevronRight, Download, MessageCircle } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Calendar, MapPin, Clock, Ticket, Car, Bus, Utensils, Baby, Wifi, Camera, Shield, Gift, ShoppingBag, Heart, Users, Music, ChevronRight, Download, MessageCircle, AlertCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import useSEO from '../Hooks/useSEO';
+import ComingSoonDownload from '../Components/Common/ComingSoonDownload';
+import { isProgramReady, getProgramHighlights } from '../Services/programService';
+import { isPlanReady, getPlanInfo } from '../Services/planService';
 
 interface InfoCard {
   icon: React.ComponentType<{ size?: number; className?: string }>;
@@ -24,20 +27,40 @@ interface FAQ {
 
 const VisitorInfo: React.FC = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+  const [programReady, setProgramReady] = useState<boolean>(false);
+  const [planReady, setPlanReady] = useState<boolean>(false);
+  const [planInfo, setPlanInfo] = useState(getPlanInfo());
+  const [displaySchedule, setDisplaySchedule] = useState<ScheduleDay[]>([]);
 
   useSEO({
-    title: "Informations Visiteurs - La Foire Aux Cadeaux 2025 | Lomé",
+    title: "Informations Visiteurs - La Foire Aux Cadeaux 2026 | Lomé",
     description: "Tout ce qu'il faut savoir pour visiter la foire : horaires, tarifs, accès, programme. Planifiez votre visite au plus grand salon lifestyle du Togo.",
     url: "https://foireauxcadeaux.anaisconcept.biz/visiteurs",
     image: "https://anaisconcept.biz/wp-content/uploads/2025/12/Femi-1920x1080px-Horizontal.jpg",
     keywords: "visiter foire lomé, horaires foire cadeaux, tarifs entrée lomé, programme événement togo"
   });
 
+  useEffect(() => {
+    // Check program readiness from shared service
+    const ready = isProgramReady();
+    setProgramReady(ready);
+    
+    // If program is ready, load the highlights
+    if (ready) {
+      const highlights = getProgramHighlights();
+      setDisplaySchedule(highlights);
+    }
+    
+    // Check plan readiness from shared service
+    setPlanReady(isPlanReady());
+    setPlanInfo(getPlanInfo());
+  }, []);
+
   const practicalInfo: InfoCard[] = [
     {
       icon: Calendar,
       title: 'Dates',
-      description: 'Ven 19 - Dim 21 Déc. 2025',
+      description: 'Ven 18 - Dim 20 Déc. 2026',
       details: ['3 jours de shopping', 'Plus de 100 exposants', 'Animations tous les jours']
     },
     {
@@ -93,9 +116,10 @@ const VisitorInfo: React.FC = () => {
     }
   ];
 
-  const schedule: ScheduleDay[] = [
+  // Fallback schedule when program is not ready
+  const fallbackSchedule: ScheduleDay[] = [
     {
-      date: '19 Décembre',
+      date: '18 Décembre',
       day: 'Vendredi',
       hours: '09h00 - 21h00',
       highlights: [
@@ -108,7 +132,7 @@ const VisitorInfo: React.FC = () => {
       ]
     },
     {
-      date: '20 Décembre',
+      date: '19 Décembre',
       day: 'Samedi',
       hours: '09h00 - 21h00',
       highlights: [
@@ -120,7 +144,7 @@ const VisitorInfo: React.FC = () => {
       ]
     },
     {
-      date: '21 Décembre',
+      date: '20 Décembre',
       day: 'Dimanche',
       hours: '09h00 - 21h00',
       highlights: [
@@ -213,6 +237,9 @@ const VisitorInfo: React.FC = () => {
     ' Faites une liste des cadeaux à trouver pour ne rien oublier'
   ];
 
+  // Use either the loaded schedule or fallback
+  const scheduleToShow = programReady && displaySchedule.length > 0 ? displaySchedule : fallbackSchedule;
+
   return (
     <div className="pt-20">
       {/* Hero Section */}
@@ -220,7 +247,7 @@ const VisitorInfo: React.FC = () => {
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-gray-900 text-white px-4 py-2 rounded-full mb-6">
             <Users size={18} />
-            <span className="text-sm font-semibold">Entrée 1 000 FCFA • 19-21 Décembre 2025</span>
+            <span className="text-sm font-semibold">Entrée 1 000 FCFA • 18-20 Décembre 2026</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
             Préparez votre visite
@@ -230,10 +257,22 @@ const VisitorInfo: React.FC = () => {
             à La Foire Aux Cadeaux. Horaires, accès, services, programme...
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-4 rounded-lg font-semibold transition-all flex items-center gap-2 justify-center">
-              <Download size={20} />
-              Télécharger le plan
-            </button>
+            {planReady ? (
+              <a
+                href={planInfo.downloadUrl}
+                download={planInfo.fileName}
+                className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-4 rounded-lg font-semibold transition-all flex items-center gap-2 justify-center"
+              >
+                <Download size={20} />
+                Télécharger le plan
+              </a>
+            ) : (
+              <ComingSoonDownload 
+                title="Télécharger le plan" 
+                description="Plan du salon disponible prochainement"
+                expectedDate="Novembre 2026"
+              />
+            )}
             <Link
               to="/pass-premium"
               className="border-2 border-gray-900 hover:bg-gray-900 hover:text-white text-gray-900 px-8 py-4 rounded-lg font-semibold transition-all"
@@ -241,6 +280,20 @@ const VisitorInfo: React.FC = () => {
               Découvrir le Pass Premium
             </Link>
           </div>
+          
+          {/* Program availability notice */}
+          {!programReady && (
+            <div className="mt-6 bg-yellow-50 border border-yellow-200 rounded-lg p-4 flex items-start gap-3 max-w-2xl mx-auto">
+              <AlertCircle className="text-yellow-600 flex-shrink-0 mt-0.5" size={20} />
+              <div className="text-left">
+                <p className="font-semibold text-yellow-800">Programme bientôt disponible</p>
+                <p className="text-sm text-yellow-700">
+                  Le programme détaillé des animations sera disponible prochainement. 
+                  Consultez cette page ou suivez-nous sur les réseaux sociaux pour être informé.
+                </p>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
@@ -293,14 +346,26 @@ const VisitorInfo: React.FC = () => {
         </div>
       </section>
 
-      {/* Schedule */}
+      {/* Schedule Section */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
-            Programme des 3 jours
-          </h2>
+          <div className="flex justify-between items-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900">
+              Programme des 3 jours
+            </h2>
+            {programReady && (
+              <Link 
+                to="/programme" 
+                className="text-gray-600 hover:text-gray-900 flex items-center gap-1"
+              >
+                Voir le programme détaillé
+                <ChevronRight size={16} />
+              </Link>
+            )}
+          </div>
+          
           <div className="grid md:grid-cols-3 gap-8">
-            {schedule.map((day, index) => (
+            {scheduleToShow.map((day, index) => (
               <div key={index} className="bg-white rounded-2xl p-6 shadow-sm border-2 border-gray-100">
                 <div className="mb-4">
                   <div className="text-sm text-gray-600 mb-1">{day.date}</div>
@@ -398,16 +463,16 @@ const VisitorInfo: React.FC = () => {
 
           <div className="bg-gray-100 rounded-2xl p-4">
             <div className="aspect-video rounded-xl overflow-hidden bg-gray-200">
-              <div className="w-full h-full flex items-center justify-center text-gray-500">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.950894850715!2d1.2655943!3d6.1373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1023e1c43781dcfb%3A0x573d2529a58fa70c!2zSMO0dGVsIFNBUkFLQVdBIExvbcOp!5e0!3m2!1sfr!2stg!4v1754682566205!5m2!1sfr!2stg" 
-                    width="100%" height="100%" 
-                    style={{border:0}} 
-                    allowFullScreen 
-                    loading="lazy" 
-                    referrerPolicy="no-referrer-when-downgrade">
-                  </iframe>
-              </div>
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.950894850715!2d1.2655943!3d6.1373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1023e1c43781dcfb%3A0x573d2529a58fa70c!2zSMO0dGVsIFNBUkFLQVdBIExvbcOp!5e0!3m2!1sfr!2stg!4v1754682566205!5m2!1sfr!2stg" 
+                width="100%" 
+                height="100%" 
+                style={{border:0}} 
+                allowFullScreen 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Carte Hôtel Sarakawa Lomé"
+              />
             </div>
           </div>
         </div>
@@ -455,7 +520,7 @@ const VisitorInfo: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://wa.me/22890123148?text=Bonjour,%20j'ai%20une%20question%20sur%20ma%20visite%20FAC2025."
+                href="https://wa.me/22890123148?text=Bonjour,%20j'ai%20une%20question%20sur%20ma%20visite%20FAC2026."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold transition-all flex items-center gap-2 justify-center"

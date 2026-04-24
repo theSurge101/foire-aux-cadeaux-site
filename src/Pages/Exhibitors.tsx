@@ -15,7 +15,7 @@ const Exhibitors: React.FC = () => {
   const [selectedExhibitor, setSelectedExhibitor] = useState<any>(null);
 
   useSEO({
-    title: "Liste des Exposants - La Foire Aux Cadeaux 2025 | 150+ Marques",
+    title: "Liste des Exposants - La Foire Aux Cadeaux 2026 | 150+ Marques",
     description: "Découvrez les +150 exposants présents : artisans, créateurs, marques lifestyle. Mode, décoration, bijoux, gastronomie et plus encore à Lomé.",
     url: "https://foireauxcadeaux.anaisconcept.biz/liste-exposants",
     image: "https://anaisconcept.biz/wp-content/uploads/2025/12/Femi-1920x1080px-Horizontal.jpg",
@@ -227,7 +227,7 @@ const Exhibitors: React.FC = () => {
                         )}
                         {exhibitor.new && (
                           <div className="absolute top-3 right-3 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
-                            Nouveau 2025
+                            Nouveau 2026
                           </div>
                         )}
                         {/* Logo Overlay */}

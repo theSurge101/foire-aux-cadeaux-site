@@ -73,7 +73,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-gray-300 mt-8 pt-8 text-center text-sm text-gray-500">
-          <p>&copy; 2025 La Foire Aux Cadeaux. Tous droits réservés. • Organisé par ANAÏS Concept</p>
+          <p>&copy; 2026 La Foire Aux Cadeaux. Tous droits réservés. • Organisé par ANAÏS Concept</p>
         </div>
       </div>
     </footer>

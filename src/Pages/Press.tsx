@@ -62,7 +62,7 @@ const KEY_FACTS: KeyFact[] = [
   {
     icon: Calendar,
     number: '3 jours',
-    label: '19-21 Décembre 2025',
+    label: '18-20 Décembre 2026',
     detail: 'Hôtel Sarakawa, Lomé'
   },
   {
@@ -77,7 +77,7 @@ const PRESS_RELEASES: PressRelease[] = [
   {
     date: '05 novembre 2025',
     title: 'Lancement de la 11ème édition de La Foire Aux Cadeaux',
-    excerpt: 'La Foire Aux Cadeaux revient du 19 au 21 Décembre 2025 avec plus de 150 exposants et de nombreuses nouveautés.',
+    excerpt: 'La Foire Aux Cadeaux revient du 18 au 20 Décembre 2025 avec plus de 150 exposants et de nombreuses nouveautés.',
     link: 'https://26251321.fs1.hubspotusercontent-eu1.net/hubfs/26251321/FAC/Press_Releases/FAC11_Press_Release.pdf',
     category: 'announcement'
   }

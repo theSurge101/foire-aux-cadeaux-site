@@ -10,8 +10,8 @@ interface SEOProps {
 }
 
 const useSEO = ({
-  title = "La Foire Aux Cadeaux 2025 - L'expérience shopping incontournable à Lomé",
-  description = "Découvrez La Foire Aux Cadeaux 2025 du 19-21 Décembre à l'hôtel Sarakawa de Lomé. Plus de 100 exposants, artisans locaux, cadeaux uniques et expériences familiales.",
+  title = "La Foire Aux Cadeaux 2026 - L'expérience shopping incontournable à Lomé",
+  description = "Découvrez La Foire Aux Cadeaux 2026 du 18-20 Décembre à l'hôtel Sarakawa de Lomé. Plus de 100 exposants, artisans locaux, cadeaux uniques et expériences familiales.",
   image = "https://anaisconcept.biz/wp-content/uploads/2025/10/DSC_0174-scaled.jpg",
   url = "https://foireauxcadeaux.anaisconcept.biz",
   type = "website",
@@ -72,7 +72,7 @@ const useSEO = ({
 
     // Cleanup function (optional, restores defaults on unmount)
     return () => {
-      document.title = "La Foire Aux Cadeaux 2025";
+      document.title = "La Foire Aux Cadeaux 2026";
     };
   }, [title, description, image, url, keywords, type]);
 };

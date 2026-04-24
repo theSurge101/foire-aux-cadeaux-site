@@ -13,7 +13,7 @@ const ExhibitorDetailPage: React.FC = () => {
   }
 
   useSEO({
-    title: `${exhibitor.name} - Stand ${exhibitor.standNumber} | La Foire Aux Cadeaux 2025`,
+    title: `${exhibitor.name} - Stand ${exhibitor.standNumber} | La Foire Aux Cadeaux 2026`,
     description: exhibitor.description,
     image: exhibitor.photo,
     url: `https://foireauxcadeaux.anaisconcept.biz/exposants/${exhibitor.slug}`,
@@ -64,7 +64,7 @@ const ExhibitorDetailPage: React.FC = () => {
                     )}
                     {exhibitor.new && (
                       <div className="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                        Nouveau 2025
+                        Nouveau 2026
                       </div>
                     )}
                   </div>

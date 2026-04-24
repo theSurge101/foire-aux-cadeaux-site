@@ -5,7 +5,7 @@ import useSEO from '../Hooks/useSEO';
 
 // Constants
 const CONTACT_PHONE = '22890123148';
-const FORM_URL = 'https://forms.hubspot.com/12345678/exposant-form';
+const FORM_URL = 'https://share-eu1.hsforms.com/1Xbebeq74QUGPCLPBQLMMOAfmnnd';
 const WHATSAPP_URL = `https://wa.me/${CONTACT_PHONE}?text=Bonjour,%20je%20souhaite%20des%20infos%20sur%20les%20stands%20exposants`;
 
 // Types
@@ -30,7 +30,7 @@ interface ProcessStep {
 
 const ExhibitorInfo: React.FC = () => {
       useSEO({
-        title:"Devenez Exposant - La Foire Aux Cadeaux 2025 | Lomé",
+        title:"Devenez Exposant - La Foire Aux Cadeaux 2026 | Lomé",
         description:"Exposez votre marque devant 3,000 visiteurs ciblés. Stands premium, visibilité maximale et opportunités de networking. Réservez votre emplacement maintenant.",
         url:"https://foireauxcadeaux.anaisconcept.biz/exposants",
         image:"https://marketing.anaisconcept.biz/hubfs/FAC/FAC2024_BOOTHSPOT_PUBLIC_AUTHENTIC_EPSIGATE_001.jpg?w=800&h=600&fit=crop",
@@ -67,8 +67,8 @@ const ExhibitorInfo: React.FC = () => {
     { step: '1', title: 'Remplissez le formulaire', desc: 'En ligne ou via WhatsApp' },
     { step: '2', title: 'Validation de votre dossier', desc: 'Réponse sous 48h' },
     { step: '3', title: 'Paiement et réservation', desc: 'Sécurisez votre emplacement' },
-    { step: '4', title: 'Formation Obligatoire le 15 Nov.', desc: 'Découvrez comment réussir sa foire' },
-    { step: '5', title: 'Installation le 18 Déc.', desc: 'Notre équipe vous accompagne' }
+    { step: '4', title: 'Formation pour tous.', desc: 'Découvrez comment réussir sa foire' },
+    { step: '5', title: 'Installation le 17 Déc.', desc: 'Notre équipe vous accompagne' }
   ];
 
   const handlePackageSelect = (pkgName: string): void => {

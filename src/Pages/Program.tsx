@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Calendar, Clock, MapPin, Music, Palette, Utensils, Trophy, Baby, Download, Bell, Star, Sparkles, Filter } from 'lucide-react';
 import useSEO from '../Hooks/useSEO';
+import { getProgramData, isProgramReady } from '../Services/programService';
+import ComingSoon from '../Components/Common/ComingSoon';
 
 interface Activity {
   time: string;
@@ -22,14 +24,27 @@ interface DaySchedule {
 const Program: React.FC = () => {
   const [selectedDay, setSelectedDay] = useState<number>(0);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [programReady, setProgramReady] = useState<boolean>(false);
+  const [schedule, setSchedule] = useState<DaySchedule[]>([]);
 
   useSEO({
-    title: "Programme Complet - La Foire Aux Cadeaux 2025 | 19-21 Décembre",
+    title: "Programme Complet - La Foire Aux Cadeaux 2026 | 18-20 Décembre",
     description: "Découvrez le programme détaillé des 3 jours : défilés de mode, concerts, ateliers DIY, démonstrations culinaires, animations enfants et bien plus encore !",
     url: "https://foireauxcadeaux.anaisconcept.biz/programme",
     image: "https://anaisconcept.biz/wp-content/uploads/2025/12/Femi-1920x1080px-Horizontal.jpg",
     keywords: "programme foire cadeaux, animations lomé, ateliers togo, spectacles événement, défilés mode lomé"
   });
+
+  useEffect(() => {
+    // Check if program is ready from shared service
+    const ready = isProgramReady();
+    setProgramReady(ready);
+    
+    if (ready) {
+      // Load the full program data
+      setSchedule(getProgramData() as DaySchedule[]);
+    }
+  }, []);
 
   const categories = [
     { id: 'all', label: 'Tout voir', icon: Star, color: 'gray' },
@@ -40,192 +55,6 @@ const Program: React.FC = () => {
     { id: 'kids', label: 'Enfants', icon: Baby, color: 'green' },
     { id: 'food', label: 'Gastronomie', icon: Utensils, color: 'orange' },
     { id: 'vip', label: 'VIP', icon: Star, color: 'red' }
-  ];
-
-  const schedule: DaySchedule[] = [
-    {
-      date: '19 Décembre',
-      day: 'Vendredi',
-      fullDate: 'Vendredi 19 Décembre 2025',
-      activities: [
-        {
-          time: '09:00',
-          title: 'Cérémonie d\'ouverture officielle',
-          description: 'Discours des autorités, ruban inaugural et ouverture au grand public. Présence des médias nationaux.',
-          location: 'Scène Principale',
-          category: 'vip',
-          icon: Star
-        },
-        {
-          time: '10:00',
-          title: 'Ventes et activités grand public',
-          description: 'Ouverture de tous les stands et début des ventes. Découverte des exposants et premières animations. Présence des médias nationaux.',
-          location: 'Tout le salon',
-          category: 'demo',
-          icon: Sparkles,
-          isFeatured: true
-        },
-        {
-          time: '14:00',
-          title: 'Ambiance spéciale exposant/visiteurs',
-          description: 'Animations surprises dans les allées, rencontres privilégiées avec les exposants et démonstrations live.',
-          location: 'Tout le salon',
-          category: 'demo',
-          icon: Sparkles,
-          isFeatured: true
-        },
-        {
-          time: '16:00',
-          title: 'Questions surprises/interviews',
-          description: 'Micro-trottoir et interviews spontanées avec visiteurs et exposants. Lots à gagner pour les participants !',
-          location: 'Allées principales',
-          category: 'contest',
-          icon: Trophy
-        },
-        {
-          time: '19:00',
-          title: 'Anniversaires du jour',
-          description: 'Célébration des anniversaires des visiteurs nés un 19 décembre. Gâteau géant et cadeaux surprises !',
-          location: 'Scène Principale',
-          category: 'show',
-          icon: Music,
-          isFeatured: true
-        },
-        {
-          time: '20:00',
-          title: 'Cocktail VIP & Networking',
-          description: 'Rencontre avec exposants, influenceurs et entrepreneurs.',
-          location: 'Scène Principale',
-          category: 'vip',
-          icon: Star,
-          isFeatured: true
-        }
-      ]
-    },
-    {
-      date: '20 Décembre',
-      day: 'Samedi',
-      fullDate: 'Samedi 20 Décembre 2025',
-      activities: [
-        {
-          time: '09:00',
-          title: 'Ouverture des ventes',
-          description: 'Deuxième jour de shopping avec nouvelles arrivées et promotions exclusives du weekend',
-          location: 'Tout le salon',
-          category: 'demo',
-          icon: Sparkles
-        },
-        {
-          time: '11:00',
-          title: 'Ambiance spéciale exposant/visiteurs',
-          description: 'Nouvelle série d\'animations et rencontres exclusives. Dégustations et démonstrations renforcées.',
-          location: 'Tout le salon',
-          category: 'demo',
-          icon: Sparkles,
-          isFeatured: true
-        },
-        {
-          time: '16:00',
-          title: 'Questions surprises/interviews',
-          description: 'Deuxième session d\'interactions spontanées avec encore plus de lots et de surprises pour les participants.',
-          location: 'Allées principales',
-          category: 'contest',
-          icon: Trophy
-        },
-        {
-          time: '17:00',
-          title: 'Le Show des exposants',
-          description: 'Interactions et activations commerciales pour les exposants.',
-          location: 'Allées principales',
-          category: 'contest',
-          icon: Trophy
-        },
-        {
-          time: '19:00',
-          title: 'Anniversaires du jour',
-          description: 'Fête des visiteurs nés un 20 décembre. Animation musicale et distribution de gadeau.',
-          location: 'Scène Principale',
-          category: 'show',
-          icon: Music
-        },
-        {
-          time: '20:00',
-          title: 'Karaoke & Chilling',
-          description: 'Session karaoké géante pour clôturer la journée dans la bonne humeur. Ambiance détente et conviviale.',
-          location: 'Scène Principale',
-          category: 'show',
-          icon: Music,
-          isFeatured: true
-        }
-      ]
-    },
-    {
-      date: '21 Décembre',
-      day: 'Dimanche',
-      fullDate: 'Dimanche 21 Décembre 2025',
-      activities: [
-        {
-          time: '09:00',
-          title: 'Ouverture des ventes',
-          description: 'Dernier jour pour profiter des opportunités de fin d\'événement et des promotions exclusives.',
-          location: 'Tout le salon',
-          category: 'demo',
-          icon: Sparkles
-        },
-        {
-          time: '11:00',
-          title: 'Ambiance spéciale exposant/visiteurs',
-          description: 'Dernières animations et rencontres privilégiées. Moment d\'échanges et de partage avant la clôture.',
-          location: 'Tout le salon',
-          category: 'demo',
-          icon: Sparkles,
-          isFeatured: true
-        },
-        {
-          time: '14:00',
-          title: 'Noël de rêve',
-          description: 'Ambiance festive de Noël, pour enfants, avec décoration spéciale, musique de fête et distribution de surprises.',
-          location: 'Scène Principale',
-          category: 'kids',
-          icon: Baby,
-          isFeatured: true
-        },
-        {
-          time: '15:00',
-          title: 'Togbuiga ADELA AKLASSOU IV, chef Canton de Bè : "Les cadeaux dans nos traditions"',
-          description: 'Table ronde avec des experts sur la signification des cadeaux dans les cultures africaines. Échanges avec le public.',
-          location: 'Scène Principale',
-          category: 'workshop',
-          icon: Palette,
-          isFeatured: true
-        },
-        {
-          time: '17:00',
-          title: 'Chants et danses du terroir',
-          description: 'Animations et performances culturelles pour les participants.',
-          location: 'Scène Principale',
-          category: 'show',
-          icon: Trophy
-        },
-        {
-          time: '19:00',
-          title: 'Anniversaires du jour',
-          description: 'Dernière célébration des anniversaires pour les nés un 21 décembre.',
-          location: 'Scène Principale',
-          category: 'show',
-          icon: Music
-        },
-        {
-          time: '20:00',
-          title: 'Ending Party & Remerciements',
-          description: 'Cérémonie de clôture officielle, remerciements aux exposants et visiteurs, et annonce des projets futurs.',
-          location: 'Scène Principale',
-          category: 'show',
-          icon: Music,
-          isFeatured: true
-        }
-      ]
-    }
   ];
 
   const highlights = [
@@ -251,9 +80,18 @@ const Program: React.FC = () => {
     }
   ];
 
-  const filteredActivities = schedule[selectedDay].activities.filter(activity => 
+  // Show Coming Soon page if program is not ready
+  if (!programReady) {
+    return <ComingSoon 
+      pageName="Programme complet" 
+      expectedDate="Novembre 2026"
+      additionalInfo="Le programme détaillé des animations, spectacles et ateliers sera dévoilé prochainement."
+    />;
+  }
+
+  const filteredActivities = schedule[selectedDay]?.activities.filter(activity => 
     selectedCategory === 'all' || activity.category === selectedCategory
-  );
+  ) || [];
 
   const getCategoryColor = (category: string) => {
     const colors: { [key: string]: string } = {
@@ -290,7 +128,7 @@ const Program: React.FC = () => {
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-gray-900 text-white px-4 py-2 rounded-full mb-6">
             <Calendar size={18} />
-            <span className="text-sm font-semibold">19-21 Décembre 2025 • 3 Jours d'Animations</span>
+            <span className="text-sm font-semibold">18-20 Décembre 2026 • 3 Jours d'Animations</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
             Programme complet

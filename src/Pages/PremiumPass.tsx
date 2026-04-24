@@ -28,7 +28,7 @@ const PremiumPass: React.FC = () => {
   const [showPaymentModal, setShowPaymentModal] = useState<boolean>(false);
 
   useSEO({
-    title: "Pass Premium VIP - La Foire Aux Cadeaux 2025 | Expérience Exclusive",
+    title: "Pass Premium VIP - La Foire Aux Cadeaux 2026 | Expérience Exclusive",
     description: "Profitez d'une expérience VIP unique : accès prioritaire, salon privé, cocktail exclusif, cadeaux premium et bien plus. Places limitées.",
     url: "https://foireauxcadeaux.anaisconcept.biz/pass-premium",
     image: "https://foireauxcadeaux.anaisconcept.biz/og-premium.jpg",
@@ -140,7 +140,7 @@ const PremiumPass: React.FC = () => {
     },
     {
       question: 'Le Pass Premium est-il valable pour les 3 jours ?',
-      answer: 'Oui ! Votre Pass Premium vous donne accès à tous les avantages pendant les 3 jours de la foire (19, 20 et 21 décembre 2025). Vous pouvez entrer et sortir librement avec votre Pass Premium.'
+      answer: 'Oui ! Votre Pass Premium vous donne accès à tous les avantages pendant les 3 jours de la foire (18, 19 et 20 décembre 2026). Vous pouvez entrer et sortir librement avec votre Pass Premium.'
     },
     {
       question: 'Puis-je acheter plusieurs Pass Premium ?',
@@ -156,7 +156,7 @@ const PremiumPass: React.FC = () => {
     },
     {
       question: 'Puis-je me faire rembourser ?',
-      answer: 'Remboursement intégral jusqu\'au 28 Novembre 2025. Après cette date, le Pass est non remboursable mais transférable à une autre personne (nous contacter).'
+      answer: 'Remboursement intégral jusqu\'au 30 Novembre 2026. Après cette date, le Pass est non remboursable mais transférable à une autre personne (nous contacter).'
     },
     {
       question: 'Y a-t-il vraiment que 200 passes disponibles ?',

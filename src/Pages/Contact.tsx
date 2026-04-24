@@ -43,7 +43,7 @@ const Contact: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
 
   useSEO({
-    title: "Nous Contacter - La Foire Aux Cadeaux 2025 | Lomé",
+    title: "Nous Contacter - La Foire Aux Cadeaux 2026 | Lomé",
     description: "Une question sur la foire ? Contactez-nous par email, téléphone, WhatsApp ou via notre formulaire. Notre équipe répond sous 24h.",
     url: "https://foireauxcadeaux.anaisconcept.biz/contact",
     image: "https://oireauxcadeaux.anaisconcept.biz/og-contact.jpg",

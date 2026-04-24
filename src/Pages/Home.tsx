@@ -1,28 +1,28 @@
-import React, { useState, useEffect } from 'react';
-import { Calendar, MapPin, Clock, Users, Gift, Heart, ShoppingBag, ChevronRight, Download, Zap, Shield, Trophy, MessageCircle } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Calendar, MapPin, Clock, Users, Gift, Heart, ShoppingBag, ChevronRight, Download, Zap, Shield, Trophy, MessageCircle, Play, Pause, Volume2, VolumeX } from 'lucide-react';
 import type { Testimonial, NewsletterForm } from '../types';
 import useSEO from '../Hooks/useSEO';
 
-
-
 const Home: React.FC = () => {
-   useSEO({
-    title: "La Foire Aux Cadeaux 2025 - L'expérience shopping incontournable à Lomé",
-    description: "Découvrez La Foire Aux Cadeaux 2025 du 19-21 Décembre à l'hôtel Sarakawa de Lomé. Plus de 100 exposants, artisans locaux, cadeaux uniques et expériences familiales.",
+  useSEO({
+    title: "La Foire Aux Cadeaux 2026 - L'expérience shopping incontournable à Lomé",
+    description: "Découvrez La Foire Aux Cadeaux 2026 du 18-20 Décembre à l'hôtel Sarakawa de Lomé. Plus de 100 exposants, artisans locaux, cadeaux uniques et expériences familiales.",
     image: "https://anaisconcept.biz/wp-content/uploads/2025/10/DSC_0174-scaled.jpg",
     url: "https://foireauxcadeaux.anaisconcept.biz",
     keywords: "foire aux cadeaux, salon lomé, shopping togo, exposition lomé, artisans togo"
   });
 
-  const [brochureReady] = useState<boolean>(false);
+  // const [brochureReady] = useState<boolean>(false);
   const [guideReady] = useState<boolean>(false);
   const [activeTestimonial, setActiveTestimonial] = useState<number>(0);
   const [activeGalleryImage, setActiveGalleryImage] = useState<number>(0);
+  const [isVideoPlaying, setIsVideoPlaying] = useState<boolean>(true);
+  const [isMuted, setIsMuted] = useState<boolean>(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [newsletterForm, setNewsletterForm] = useState<NewsletterForm>({
     email: '',
     whatsapp: false
   });
-
 
   const testimonials: Testimonial[] = [
     { 
@@ -47,14 +47,33 @@ const Home: React.FC = () => {
 
   const galleryImages: string[] = [
     "https://marketing.anaisconcept.biz/hubfs/FAC/FAC2024_BOOTHSPOT_PUBLIC_BUFFET_EPSIGATE_001.jpg?w=800&h=600&fit=crop",
-      "https://marketing.anaisconcept.biz/hubfs/FAC/FAC2024_BOOTHSPOT_PUBLIC_AUTHENTIC_EPSIGATE_001.jpg?w=800&h=600&fit=crop",
-      "https://marketing.anaisconcept.biz/hubfs/FAC/FAC2024_BOOTHSPOT_PUBLIC_AFRICADOU_EPSIGATE_001.jpg?w=800&h=600&fit=crop",
-      "https://marketing.anaisconcept.biz/hubfs/FAC/FAC2024_CROWD_PRESS_DANCE_EPSIGATE_001.jpg?w=800&h=600&fit=crop",
-      "https://marketing.anaisconcept.biz/hubfs/FAC/FAC2024_CROWD_PRESS_KidsGames_EPSIGATE_001.jpg?w=800&h=600&fit=crop",
-      "https://marketing.anaisconcept.biz/hubfs/FAC/FAC2024_BOOTHSPOT_PUBLIC_DJONOUVI_EPSIGATE_001.jpg?w=800&h=600&fit=crop",
-      "https://marketing.anaisconcept.biz/hubfs/FAC/FAC2024_PORTRAIT_EXHIBITOR_EXHIBITOR_FRUTIFRESH_EPSIGATE_001.jpg?w=800&h=600&fit=crop",
-      "https://anaisconcept.biz/wp-content/uploads/2025/10/DSC_0174-scaled.jpg"
+    "https://marketing.anaisconcept.biz/hubfs/FAC/FAC2024_BOOTHSPOT_PUBLIC_AUTHENTIC_EPSIGATE_001.jpg?w=800&h=600&fit=crop",
+    "https://marketing.anaisconcept.biz/hubfs/FAC/FAC2024_BOOTHSPOT_PUBLIC_AFRICADOU_EPSIGATE_001.jpg?w=800&h=600&fit=crop",
+    "https://marketing.anaisconcept.biz/hubfs/FAC/FAC2024_CROWD_PRESS_DANCE_EPSIGATE_001.jpg?w=800&h=600&fit=crop",
+    "https://marketing.anaisconcept.biz/hubfs/FAC/FAC2024_CROWD_PRESS_KidsGames_EPSIGATE_001.jpg?w=800&h=600&fit=crop",
+    "https://marketing.anaisconcept.biz/hubfs/FAC/FAC2024_BOOTHSPOT_PUBLIC_DJONOUVI_EPSIGATE_001.jpg?w=800&h=600&fit=crop",
+    "https://marketing.anaisconcept.biz/hubfs/FAC/FAC2024_PORTRAIT_EXHIBITOR_EXHIBITOR_FRUTIFRESH_EPSIGATE_001.jpg?w=800&h=600&fit=crop",
+    "https://anaisconcept.biz/wp-content/uploads/2025/10/DSC_0174-scaled.jpg"
   ];
+
+  // Video controls
+  const togglePlayPause = () => {
+    if (videoRef.current) {
+      if (isVideoPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsVideoPlaying(!isVideoPlaying);
+    }
+  };
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
+  };
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -86,187 +105,206 @@ const Home: React.FC = () => {
 
   return (
     <div className="pt-20">
-      {/* Hero Section */}
-      <section className="pb-12 px-4 bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden">
-        <div className="max-w-6xl mx-auto relative">
+      {/* Hero Section with Video Background */}
+      <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+        {/* Video Background */}
+        <div className="absolute inset-0 w-full h-full">
+          <video
+            ref={videoRef}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+            poster="https://anaisconcept.biz/wp-content/uploads/2025/10/DSC_0174-scaled.jpg"
+          >
+            <source src="https://anaisconcept.biz/wp-content/uploads/2026/04/FAC_Cover.mp4" type="video/mp4" />
+            {/* Fallback image if video doesn't load */}
+            <img src="https://anaisconcept.biz/wp-content/uploads/2025/10/DSC_0174-scaled.jpg" alt="La Foire Aux Cadeaux" />
+          </video>
+          
+          {/* Dark Overlay for better text readability */}
+          <div className="absolute inset-0 bg-black/50"></div>
+          
+          {/* Video Controls */}
+          <div className="absolute bottom-6 right-6 z-20 flex gap-3">
+            <button
+              onClick={togglePlayPause}
+              className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white p-3 rounded-full transition-all"
+              aria-label={isVideoPlaying ? "Pause" : "Play"}
+            >
+              {isVideoPlaying ? <Pause size={20} /> : <Play size={20} />}
+            </button>
+            <button
+              onClick={toggleMute}
+              className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white p-3 rounded-full transition-all"
+              aria-label={isMuted ? "Unmute" : "Mute"}
+            >
+              {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
+            </button>
+          </div>
+        </div>
+
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-6xl mx-auto px-4 text-center text-white">
+          <div className="animate-fadeInUp">
+            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+              <Calendar size={18} />
+              <span className="text-sm font-semibold">18-20 Décembre 2026 • Lomé, Togo</span>
+            </div>
+            
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+              La Foire Aux<br/>
+              <span className="text-amber-400">Cadeaux 2026</span>
+            </h1>
+            
+            <p className="text-xl md:text-2xl mb-8 leading-relaxed max-w-3xl mx-auto text-gray-200">
+              Le plus grand rendez-vous shopping et découvertes de l'année à Lomé. 
+              Plus de 100 exposants, des animations exclusives et une ambiance festive.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button 
+                onClick={() => scrollToSection('about')}
+                className="bg-amber-500 hover:bg-amber-600 text-gray-900 px-8 py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105 flex items-center gap-2 justify-center"
+              >
+                Découvrir l'événement
+                <ChevronRight size={20} />
+              </button>
+              <button 
+                onClick={() => scrollToSection('exhibitor')}
+                className="border-2 border-white hover:bg-white hover:text-gray-900 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all"
+              >
+                Devenir exposant
+              </button>
+            </div>
+
+            {/* Quick Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-8 border-t border-white/20">
+              <div>
+                <div className="text-3xl font-bold text-amber-400">100+</div>
+                <div className="text-sm text-gray-300">Exposants</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-amber-400">3,000+</div>
+                <div className="text-sm text-gray-300">Visiteurs attendus</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-amber-400">3 Jours</div>
+                <div className="text-sm text-gray-300">D'animations</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-amber-400">10+</div>
+                <div className="text-sm text-gray-300">Ateliers & Shows</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+            <div className="w-1 h-2 bg-white rounded-full mt-2 animate-pulse"></div>
+          </div>
+        </div>
+      </section>
+
+      {/* Rest of your existing sections with minor styling updates */}
+      
+      {/* What is La Foire Aux Cadeaux - Updated with lighter background */}
+      <section id="about" className="py-20 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <span className="text-amber-500 font-semibold text-sm uppercase tracking-wider">À propos</span>
+            <h2 className="text-4xl md:text-5xl font-bold mt-2 mb-6 text-gray-900">
+              Qu'est-ce que La Foire Aux Cadeaux ?
+            </h2>
+            <div className="w-20 h-1 bg-amber-500 mx-auto mb-8"></div>
+          </div>
+          
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="text-center lg:text-left">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900 leading-tight">
-                La Foire Aux<br/>
-                <span className="text-gray-600">Cadeaux</span>
-              </h1>
-              <p className="text-xl md:text-2xl mb-8 text-gray-600 leading-relaxed">
-                Le rendez-vous incontournable du shopping et des découvertes à Lomé
+            <div>
+              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                Le plus grand rassemblement de créateurs, artisans et marques lifestyle au Togo. 
+                Trois jours de découvertes, de shopping et de moments partagés en famille dans une 
+                ambiance festive et conviviale.
               </p>
-              
-              <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-8">
-                <div className="flex items-center gap-2 text-gray-700 bg-white px-4 py-2 rounded-lg shadow-sm">
-                  <Calendar size={18} />
-                  <span className="font-medium">19-21 Décembre 2025</span>
-                </div>
-                <div className="flex items-center gap-2 text-gray-700 bg-white px-4 py-2 rounded-lg shadow-sm">
-                  <MapPin size={18} />
-                  <span className="font-medium">Hôtel Sarakawa, Lomé</span>
-                </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                {brochureReady ? (
-                  <a
-                    href="/brochure-foire-aux-cadeaux-2025.pdf"
-                    download
-                    className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105 flex items-center gap-2"
-                  >
-                    <Download size={20} />
-                    Télécharger le programme
-                  </a>
-                ) : (
-                  <button 
-                    disabled
-                    className="bg-gray-400 text-gray-600 px-8 py-4 rounded-lg text-lg font-semibold cursor-not-allowed flex items-center gap-2 opacity-60 relative group"
-                    title="Programme bientôt disponible"
-                  >
-                    <Download size={20} />
-                    Télécharger le programme
-                    <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                      Bientôt disponible
-                    </span>
-                  </button>
-                )}
-                <button 
-                  onClick={() => scrollToSection('exhibitor')}
-                  className="border-2 border-gray-900 hover:bg-gray-900 hover:text-white text-gray-900 px-8 py-4 rounded-lg text-lg font-semibold transition-all flex items-center gap-2"
-                >
-                  Devenir exposant
-                </button>
-              </div>
+              <p className="text-gray-600 leading-relaxed">
+                Venez découvrir des produits uniques, rencontrer des créateurs passionnés et 
+                profiter d'animations pour toute la famille. La Foire Aux Cadeaux, c'est l'événement 
+                incontournable de fin d'année à Lomé !
+              </p>
             </div>
-
-            <div className="relative">
-              <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src={galleryImages[activeGalleryImage]} 
-                  alt="La Foire Aux Cadeaux"
-                  className="w-full h-full object-cover transition-all duration-1000"
-                />
+            <div className="grid grid-cols-2 gap-4">
+              <div className="bg-gray-50 rounded-xl p-6 text-center">
+                <div className="w-16 h-16 mx-auto mb-4 bg-amber-100 rounded-full flex items-center justify-center">
+                  <ShoppingBag className="text-amber-600" size={28} />
+                </div>
+                <h3 className="font-semibold text-gray-900">Shopping</h3>
+                <p className="text-gray-600 text-sm mt-1">Découvrez les dernières tendances</p>
               </div>
-              <div className="absolute -bottom-4 -right-4 bg-white rounded-xl p-4 shadow-lg">
-                <div className="text-2xl font-bold text-gray-900">+3K</div>
-                <div className="text-sm text-gray-600">Visiteurs attendus</div>
+              <div className="bg-gray-50 rounded-xl p-6 text-center">
+                <div className="w-16 h-16 mx-auto mb-4 bg-amber-100 rounded-full flex items-center justify-center">
+                  <Gift className="text-amber-600" size={28} />
+                </div>
+                <h3 className="font-semibold text-gray-900">Découvertes</h3>
+                <p className="text-gray-600 text-sm mt-1">Trouvez des créations uniques</p>
+              </div>
+              <div className="bg-gray-50 rounded-xl p-6 text-center">
+                <div className="w-16 h-16 mx-auto mb-4 bg-amber-100 rounded-full flex items-center justify-center">
+                  <Heart className="text-amber-600" size={28} />
+                </div>
+                <h3 className="font-semibold text-gray-900">Famille</h3>
+                <p className="text-gray-600 text-sm mt-1">Une sortie pour tous les âges</p>
+              </div>
+              <div className="bg-gray-50 rounded-xl p-6 text-center">
+                <div className="w-16 h-16 mx-auto mb-4 bg-amber-100 rounded-full flex items-center justify-center">
+                  <Users className="text-amber-600" size={28} />
+                </div>
+                <h3 className="font-semibold text-gray-900">Networking</h3>
+                <p className="text-gray-600 text-sm mt-1">Rencontrez la communauté</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* What is La Foire Aux Cadeaux */}
-      <section id="about" className="py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gray-900">
-            Qu'est-ce que La Foire Aux Cadeaux ?
-          </h2>
-          <p className="text-lg md:text-xl text-gray-600 mb-12 leading-relaxed max-w-3xl mx-auto">
-            Le plus grand rassemblement de créateurs, artisans et marques lifestyle au Togo. 
-            Trois jours de découvertes, de shopping et de moments partagés en famille dans une 
-            ambiance festive et conviviale.
-          </p>
+      {/* Why Visit Section - Keep as is */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-amber-500 font-semibold text-sm uppercase tracking-wider">Pourquoi venir ?</span>
+            <h2 className="text-4xl md:text-5xl font-bold mt-2 mb-6 text-gray-900">
+              Pourquoi visiter la foire ?
+            </h2>
+            <div className="w-20 h-1 bg-amber-500 mx-auto"></div>
+          </div>
 
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="text-center group">
-              <div className="w-16 h-16 mx-auto mb-4 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-gray-200 transition-colors">
-                <ShoppingBag className="text-gray-700" size={24} />
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* ... keep your existing why visit cards ... */}
+            {[
+              { img: galleryImages[0], title: "Marques locales", desc: "Découvrez le savoir-faire togolais et soutenez les créateurs locaux" },
+              { img: galleryImages[4], title: "Sortie familiale", desc: "Des activités pour petits et grands dans une ambiance festive" },
+              { img: galleryImages[5], title: "Cadeaux exclusifs", desc: "Trouvez des idées cadeaux originales qu'on ne trouve nulle part ailleurs" },
+              { img: galleryImages[3], title: "Expériences live", desc: "Assistez à des démonstrations, ateliers et spectacles" }
+            ].map((item, idx) => (
+              <div key={idx} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105 group">
+                <div className="aspect-square overflow-hidden">
+                  <img 
+                    src={item.img} 
+                    alt={item.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-3 text-gray-900">{item.title}</h3>
+                  <p className="text-gray-600 text-sm">{item.desc}</p>
+                </div>
               </div>
-              <h3 className="font-semibold mb-2 text-gray-900">Shopping</h3>
-              <p className="text-gray-600 text-sm">Découvrez les dernières tendances</p>
-            </div>
-
-            <div className="text-center group">
-              <div className="w-16 h-16 mx-auto mb-4 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-gray-200 transition-colors">
-                <Gift className="text-gray-700" size={24} />
-              </div>
-              <h3 className="font-semibold mb-2 text-gray-900">Découvertes</h3>
-              <p className="text-gray-600 text-sm">Trouvez des créations uniques</p>
-            </div>
-
-            <div className="text-center group">
-              <div className="w-16 h-16 mx-auto mb-4 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-gray-200 transition-colors">
-                <Heart className="text-gray-700" size={24} />
-              </div>
-              <h3 className="font-semibold mb-2 text-gray-900">Famille</h3>
-              <p className="text-gray-600 text-sm">Une sortie pour tous les âges</p>
-            </div>
-
-            <div className="text-center group">
-              <div className="w-16 h-16 mx-auto mb-4 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-gray-200 transition-colors">
-                <Users className="text-gray-700" size={24} />
-              </div>
-              <h3 className="font-semibold mb-2 text-gray-900">Networking</h3>
-              <p className="text-gray-600 text-sm">Rencontrez la communauté</p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
-
-      {/* Why Visit */}
-<section className="py-16 px-4 bg-gray-50">
-  <div className="max-w-6xl mx-auto">
-    <div className="text-center mb-16">
-      <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-        Pourquoi visiter la foire ?
-      </h2>
-    </div>
-
-    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-      <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105">
-        <div className="aspect-square mb-4 rounded-xl overflow-hidden">
-          <img 
-            src={galleryImages[0]} 
-            alt="Marques locales et artisans togolais"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <h3 className="text-xl font-semibold mb-3 text-gray-900">Marques locales</h3>
-        <p className="text-gray-600 text-sm">Découvrez le savoir-faire togolais et soutenez les créateurs locaux</p>
-      </div>
-
-      <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105">
-        <div className="aspect-square mb-4 rounded-xl overflow-hidden">
-          <img 
-            src={galleryImages[4]} 
-            alt="Sortie familiale et activités enfants"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <h3 className="text-xl font-semibold mb-3 text-gray-900">Sortie familiale</h3>
-        <p className="text-gray-600 text-sm">Des activités pour petits et grands dans une ambiance festive</p>
-      </div>
-
-      <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105">
-        <div className="aspect-square mb-4 rounded-xl overflow-hidden">
-          <img 
-            src={galleryImages[5]} 
-            alt="Cadeaux exclusifs et produits uniques"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <h3 className="text-xl font-semibold mb-3 text-gray-900">Cadeaux exclusifs</h3>
-        <p className="text-gray-600 text-sm">Trouvez des idées cadeaux originales qu'on ne trouve nulle part ailleurs</p>
-      </div>
-
-      <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105">
-        <div className="aspect-square mb-4 rounded-xl overflow-hidden">
-          <img 
-            src={galleryImages[3]} 
-            alt="Expériences live et spectacles"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <h3 className="text-xl font-semibold mb-3 text-gray-900">Expériences live</h3>
-        <p className="text-gray-600 text-sm">Assistez à des démonstrations, ateliers et spectacles</p>
-      </div>
-    </div>
-  </div>
-</section>
 
       {/* Become an Exhibitor */}
       <section id="exhibitor" className="py-16 px-4">
@@ -298,7 +336,7 @@ const Home: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               {guideReady ? (
                 <a
-                  href="/guide-exposant-2025.pdf"
+                  href="/guide-exposant-2026.pdf"
                   download
                   className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-4 rounded-lg font-semibold transition-all flex items-center gap-2 justify-center"
                 >
@@ -320,7 +358,7 @@ const Home: React.FC = () => {
               )}
               <div className="flex flex-col sm:flex-row gap-2">
                 <a 
-                  href="https://forms.hubspot.com/12345678/abcd-efgh-ijkl-mnop" 
+                  href="https://share-eu1.hsforms.com/1Xbebeq74QUGPCLPBQLMMOAfmnnd" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="border-2 border-gray-900 hover:bg-gray-900 hover:text-white text-gray-900 px-6 py-4 rounded-lg font-semibold transition-all flex items-center gap-2 justify-center"
@@ -329,7 +367,7 @@ const Home: React.FC = () => {
                   <ChevronRight size={18} />
                 </a>
                 <a 
-                  href="https://wa.me/22890123148?text=Bonjour,%20je%20souhaite%20devenir%20exposant%20à%20la%20Foire%20Aux%20Cadeaux%202025.%20Pouvez-vous%20m'envoyer%20le%20formulaire%20?"
+                  href="https://wa.me/22890123148?text=Bonjour,%20je%20souhaite%20devenir%20exposant%20à%20la%20Foire%20Aux%20Cadeaux%202026.%20Pouvez-vous%20m'envoyer%20le%20formulaire%20?"
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-6 py-4 rounded-lg font-semibold transition-all flex items-center gap-2 justify-center"
@@ -386,25 +424,76 @@ const Home: React.FC = () => {
       </section>
 
       {/* Photo Gallery */}
-      <section className="py-16 px-4">
+      <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-              L'ambiance de nos précédentes éditions
-            </h2>
-          </div>
+    <div className="text-center mb-12">
+      <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+        L'ambiance de nos précédentes éditions
+      </h2>
+      <p className="text-gray-600 max-w-2xl mx-auto">
+        Plongez dans l'atmosphère unique de La Foire Aux Cadeaux à travers ces images
+      </p>
+    </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {galleryImages.map((image, index) => (
-              <div key={index} className="aspect-square rounded-xl overflow-hidden group cursor-pointer">
-                <img 
-                  src={image} 
-                  alt={`Foire aux cadeaux ${index + 1}`}
-                  className="w-full h-full object-cover transition-transform group-hover:scale-105"
-                />
-              </div>
-            ))}
-          </div>
+    {/* Featured rotating image */}
+    <div className="relative mb-8 rounded-2xl overflow-hidden shadow-xl aspect-video max-w-4xl mx-auto">
+      <img 
+        src={galleryImages[activeGalleryImage]} 
+        alt={`Ambiance FAC édition ${activeGalleryImage + 1}`}
+        className="w-full h-full object-cover transition-all duration-500"
+      />
+      
+      {/* Navigation dots */}
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+        {galleryImages.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setActiveGalleryImage(index)}
+            className={`transition-all rounded-full ${
+              index === activeGalleryImage 
+                ? 'w-8 h-2 bg-white' 
+                : 'w-2 h-2 bg-white/50 hover:bg-white/75'
+            }`}
+            aria-label={`Voir l'image ${index + 1}`}
+          />
+        ))}
+      </div>
+      
+      {/* Navigation arrows */}
+      <button
+        onClick={() => setActiveGalleryImage((prev) => (prev - 1 + galleryImages.length) % galleryImages.length)}
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded-full transition-all"
+        aria-label="Image précédente"
+      >
+        <ChevronRight className="rotate-180" size={24} />
+      </button>
+      <button
+        onClick={() => setActiveGalleryImage((prev) => (prev + 1) % galleryImages.length)}
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded-full transition-all"
+        aria-label="Image suivante"
+      >
+        <ChevronRight size={24} />
+      </button>
+    </div>
+
+    {/* Thumbnail gallery */}
+    <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-2 max-w-4xl mx-auto">
+      {galleryImages.slice(0, 8).map((image, index) => (
+        <button
+          key={index}
+          onClick={() => setActiveGalleryImage(index)}
+          className={`aspect-square rounded-lg overflow-hidden transition-all ${
+            index === activeGalleryImage ? 'ring-2 ring-amber-500 scale-105' : 'opacity-70 hover:opacity-100'
+          }`}
+        >
+          <img 
+            src={image} 
+            alt={`Miniature ${index + 1}`}
+            className="w-full h-full object-cover"
+          />
+        </button>
+      ))}
+    </div>
         </div>
       </section>
 
@@ -475,7 +564,7 @@ const Home: React.FC = () => {
                 <Calendar className="text-gray-700" size={24} />
               </div>
               <h3 className="font-semibold mb-2 text-gray-900">Dates</h3>
-              <p className="text-gray-600 text-sm">Vendredi 19 Décembre<br/>Samedi 20 Décembre<br/>Dimanche 21 Décembre 2025</p>
+              <p className="text-gray-600 text-sm">Vendredi 18 Décembre<br/>Samedi 19 Décembre<br/>Dimanche 20 Décembre 2026</p>
             </div>
 
             <div className="text-center">

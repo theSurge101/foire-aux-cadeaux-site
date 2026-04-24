@@ -27,7 +27,7 @@ interface Testimonial {
 
 const Partners: React.FC = () => {
   useSEO({
-    title: "Nos Partenaires et Sponsors - La Foire Aux Cadeaux 2025",
+    title: "Nos Partenaires et Sponsors - La Foire Aux Cadeaux 2026",
     description: "Découvrez les marques et institutions qui soutiennent La Foire Aux Cadeaux. Opportunités de partenariat et sponsoring disponibles.",
     url: "https://foireauxcadeaux.anaisconcept.biz/partenaires",
     image: "https://foireauxcadeaux.anaisconcept.biz/og-partners.jpg",
